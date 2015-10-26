@@ -1,11 +1,22 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="15A178w" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="Hiragino Sans GB W3.otf">
+            <string>HiraginoSansGB-W3</string>
+            <string>HiraginoSansGB-W3</string>
+            <string>HiraginoSansGB-W3</string>
+        </mutableArray>
+    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="InsMessageDetailViewController">
             <connections>
+                <outlet property="msgTitle" destination="ecn-tg-g4v" id="ISd-T0-wd9"/>
+                <outlet property="text" destination="HFt-sx-uKM" id="wEw-th-8Hq"/>
+                <outlet property="time" destination="cDZ-Ue-oi1" id="p74-Rd-2Ek"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -13,7 +24,145 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="消息标题" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ecn-tg-g4v">
+                    <rect key="frame" x="20" y="30" width="48" height="12"/>
+                    <animations/>
+                    <fontDescription key="fontDescription" name="HiraginoSansGB-W3" family="Hiragino Sans GB" pointSize="12"/>
+                    <color key="textColor" red="0.5450980392" green="0.12549019610000001" blue="0.13725490200000001" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qUs-sT-PLR">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="help_content_bg" translatesAutoresizingMaskIntoConstraints="NO" id="bGY-ao-Vhs">
+                            <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                            <animations/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="69" id="849-Oc-VKG"/>
+                            </constraints>
+                            <variation key="default">
+                                <mask key="constraints">
+                                    <exclude reference="849-Oc-VKG"/>
+                                </mask>
+                            </variation>
+                            <variation key="heightClass=regular-widthClass=compact">
+                                <mask key="constraints">
+                                    <exclude reference="849-Oc-VKG"/>
+                                </mask>
+                            </variation>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="消息消息消息" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HFt-sx-uKM">
+                            <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                            <animations/>
+                            <fontDescription key="fontDescription" name="HiraginoSansGB-W3" family="Hiragino Sans GB" pointSize="12"/>
+                            <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2015-04-18 12:05:00 来自“财道金融”" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cDZ-Ue-oi1">
+                            <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                            <animations/>
+                            <fontDescription key="fontDescription" name="HiraginoSansGB-W3" family="Hiragino Sans GB" pointSize="12"/>
+                            <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <animations/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="HFt-sx-uKM" secondAttribute="trailing" constant="8" id="3Hc-iU-3l4"/>
+                        <constraint firstItem="HFt-sx-uKM" firstAttribute="leading" secondItem="qUs-sT-PLR" secondAttribute="leading" constant="10" id="8oR-eu-mzE"/>
+                        <constraint firstAttribute="trailing" secondItem="bGY-ao-Vhs" secondAttribute="trailing" id="FlR-eM-LYN"/>
+                        <constraint firstItem="bGY-ao-Vhs" firstAttribute="leading" secondItem="qUs-sT-PLR" secondAttribute="leading" id="Gci-5a-ARu"/>
+                        <constraint firstItem="cDZ-Ue-oi1" firstAttribute="top" secondItem="qUs-sT-PLR" secondAttribute="top" constant="5" id="HU7-x9-qBR">
+                            <variation key="heightClass=regular-widthClass=compact" constant="6"/>
+                        </constraint>
+                        <constraint firstItem="cDZ-Ue-oi1" firstAttribute="leading" secondItem="qUs-sT-PLR" secondAttribute="leading" constant="10" id="J45-Nl-nsx"/>
+                        <constraint firstAttribute="bottom" secondItem="bGY-ao-Vhs" secondAttribute="bottom" id="LRf-6y-zyq"/>
+                        <constraint firstItem="HFt-sx-uKM" firstAttribute="top" secondItem="cDZ-Ue-oi1" secondAttribute="bottom" constant="8" id="NWo-Ab-icF"/>
+                        <constraint firstItem="bGY-ao-Vhs" firstAttribute="top" secondItem="qUs-sT-PLR" secondAttribute="top" constant="8" id="SLM-Yf-GXx">
+                            <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
+                        </constraint>
+                        <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="HFt-sx-uKM" secondAttribute="bottom" constant="10" id="fDG-Mn-xDa"/>
+                    </constraints>
+                    <variation key="default">
+                        <mask key="subviews">
+                            <exclude reference="bGY-ao-Vhs"/>
+                            <exclude reference="HFt-sx-uKM"/>
+                            <exclude reference="cDZ-Ue-oi1"/>
+                        </mask>
+                        <mask key="constraints">
+                            <exclude reference="3Hc-iU-3l4"/>
+                            <exclude reference="8oR-eu-mzE"/>
+                            <exclude reference="NWo-Ab-icF"/>
+                            <exclude reference="fDG-Mn-xDa"/>
+                            <exclude reference="HU7-x9-qBR"/>
+                            <exclude reference="J45-Nl-nsx"/>
+                            <exclude reference="FlR-eM-LYN"/>
+                            <exclude reference="Gci-5a-ARu"/>
+                            <exclude reference="LRf-6y-zyq"/>
+                            <exclude reference="SLM-Yf-GXx"/>
+                        </mask>
+                    </variation>
+                    <variation key="heightClass=regular-widthClass=compact">
+                        <mask key="subviews">
+                            <include reference="bGY-ao-Vhs"/>
+                            <include reference="HFt-sx-uKM"/>
+                            <include reference="cDZ-Ue-oi1"/>
+                        </mask>
+                        <mask key="constraints">
+                            <include reference="3Hc-iU-3l4"/>
+                            <include reference="8oR-eu-mzE"/>
+                            <include reference="NWo-Ab-icF"/>
+                            <include reference="fDG-Mn-xDa"/>
+                            <include reference="HU7-x9-qBR"/>
+                            <include reference="J45-Nl-nsx"/>
+                            <include reference="FlR-eM-LYN"/>
+                            <include reference="Gci-5a-ARu"/>
+                            <include reference="LRf-6y-zyq"/>
+                            <include reference="SLM-Yf-GXx"/>
+                        </mask>
+                    </variation>
+                </view>
+            </subviews>
+            <animations/>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="qUs-sT-PLR" secondAttribute="trailing" constant="8" id="5DC-Zm-m6W"/>
+                <constraint firstItem="qUs-sT-PLR" firstAttribute="top" secondItem="ecn-tg-g4v" secondAttribute="bottom" constant="8" id="5ug-Ud-Ksp"/>
+                <constraint firstItem="qUs-sT-PLR" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="12" id="AvD-mT-ZAJ"/>
+                <constraint firstItem="ecn-tg-g4v" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="12" id="DCE-WL-SvB"/>
+                <constraint firstItem="ecn-tg-g4v" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="13" id="Mgi-3b-qnf"/>
+            </constraints>
+            <variation key="default">
+                <mask key="subviews">
+                    <exclude reference="ecn-tg-g4v"/>
+                    <exclude reference="qUs-sT-PLR"/>
+                </mask>
+                <mask key="constraints">
+                    <exclude reference="DCE-WL-SvB"/>
+                    <exclude reference="Mgi-3b-qnf"/>
+                    <exclude reference="5DC-Zm-m6W"/>
+                    <exclude reference="5ug-Ud-Ksp"/>
+                    <exclude reference="AvD-mT-ZAJ"/>
+                </mask>
+            </variation>
+            <variation key="heightClass=regular-widthClass=compact">
+                <mask key="subviews">
+                    <include reference="ecn-tg-g4v"/>
+                    <include reference="qUs-sT-PLR"/>
+                </mask>
+                <mask key="constraints">
+                    <include reference="DCE-WL-SvB"/>
+                    <include reference="Mgi-3b-qnf"/>
+                    <include reference="5DC-Zm-m6W"/>
+                    <include reference="5ug-Ud-Ksp"/>
+                    <include reference="AvD-mT-ZAJ"/>
+                </mask>
+            </variation>
         </view>
     </objects>
+    <resources>
+        <image name="help_content_bg" width="310" height="50"/>
+    </resources>
 </document>

@@ -10,4 +10,13 @@
 
 @interface CreditViewController : UIViewController
 
+- (id)initWithDetailData:(NSDictionary*)data;
+
+@property (weak, nonatomic) IBOutlet UILabel *bishu;
+@property (weak, nonatomic) IBOutlet UILabel *cishu;
+@property (weak, nonatomic) IBOutlet UILabel *jieru;
+@property (weak, nonatomic) IBOutlet UILabel *yuqi;
+@property (weak, nonatomic) IBOutlet UILabel *zonge;
+@property (weak, nonatomic) IBOutlet UILabel *huan;
+
 @end

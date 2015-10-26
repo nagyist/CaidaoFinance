@@ -7,7 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <UICountingLabel.h>
 
 @interface MORecordCell : UITableViewCell
+@property (weak, nonatomic) IBOutlet UILabel *time;
+@property (weak, nonatomic) IBOutlet UICountingLabel *price;
+@property (weak, nonatomic) IBOutlet UILabel *name;
 
+@property (weak, nonatomic) IBOutlet UILabel *rate;
 @end

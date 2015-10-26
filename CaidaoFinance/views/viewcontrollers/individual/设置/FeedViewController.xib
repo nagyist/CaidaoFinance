@@ -1,11 +1,18 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="Hiragino Sans GB W3.otf">
+            <string>HiraginoSansGB-W3</string>
+        </mutableArray>
+    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FeedViewController">
             <connections>
+                <outlet property="textView" destination="kVz-7O-eD8" id="TJe-1x-B8h"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -13,7 +20,88 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="individual_feed_bg" translatesAutoresizingMaskIntoConstraints="NO" id="Yc7-2x-CfG">
+                    <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="111" id="CCW-mu-MFq"/>
+                    </constraints>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="CCW-mu-MFq"/>
+                        </mask>
+                    </variation>
+                    <variation key="heightClass=regular-widthClass=compact">
+                        <mask key="constraints">
+                            <include reference="CCW-mu-MFq"/>
+                        </mask>
+                    </variation>
+                </imageView>
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kVz-7O-eD8">
+                    <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="111" id="G2X-YG-Kst">
+                            <variation key="heightClass=regular-widthClass=compact" constant="105"/>
+                        </constraint>
+                    </constraints>
+                    <color key="textColor" red="0.2274509804" green="0.2274509804" blue="0.2274509804" alpha="1" colorSpace="calibratedRGB"/>
+                    <fontDescription key="fontDescription" name="HiraginoSansGB-W3" family="Hiragino Sans GB" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="G2X-YG-Kst"/>
+                        </mask>
+                    </variation>
+                    <variation key="heightClass=regular-widthClass=compact">
+                        <mask key="constraints">
+                            <include reference="G2X-YG-Kst"/>
+                        </mask>
+                    </variation>
+                </textView>
+            </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="kVz-7O-eD8" secondAttribute="trailing" constant="18" id="1R2-CE-NFW"/>
+                <constraint firstItem="Yc7-2x-CfG" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="51W-wS-NcC"/>
+                <constraint firstAttribute="trailing" secondItem="Yc7-2x-CfG" secondAttribute="trailing" constant="8" id="Fqh-Q2-t1Q"/>
+                <constraint firstItem="Yc7-2x-CfG" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="8" id="NJb-a8-sLW"/>
+                <constraint firstItem="kVz-7O-eD8" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="8" id="aoG-Gh-Qyz">
+                    <variation key="heightClass=regular-widthClass=compact" constant="11"/>
+                </constraint>
+                <constraint firstItem="kVz-7O-eD8" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="19" id="irZ-q4-1SV"/>
+            </constraints>
+            <variation key="default">
+                <mask key="subviews">
+                    <exclude reference="Yc7-2x-CfG"/>
+                    <exclude reference="kVz-7O-eD8"/>
+                </mask>
+                <mask key="constraints">
+                    <exclude reference="51W-wS-NcC"/>
+                    <exclude reference="Fqh-Q2-t1Q"/>
+                    <exclude reference="NJb-a8-sLW"/>
+                    <exclude reference="1R2-CE-NFW"/>
+                    <exclude reference="aoG-Gh-Qyz"/>
+                    <exclude reference="irZ-q4-1SV"/>
+                </mask>
+            </variation>
+            <variation key="heightClass=regular-widthClass=compact">
+                <mask key="subviews">
+                    <include reference="Yc7-2x-CfG"/>
+                    <include reference="kVz-7O-eD8"/>
+                </mask>
+                <mask key="constraints">
+                    <include reference="51W-wS-NcC"/>
+                    <include reference="Fqh-Q2-t1Q"/>
+                    <include reference="NJb-a8-sLW"/>
+                    <include reference="1R2-CE-NFW"/>
+                    <include reference="aoG-Gh-Qyz"/>
+                    <include reference="irZ-q4-1SV"/>
+                </mask>
+            </variation>
         </view>
     </objects>
+    <resources>
+        <image name="individual_feed_bg" width="300" height="111"/>
+    </resources>
 </document>

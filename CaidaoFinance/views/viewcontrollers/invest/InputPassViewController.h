@@ -8,6 +8,18 @@
 
 #import <UIKit/UIKit.h>
 
-@interface InputPassViewController : UIViewController
+typedef NS_ENUM(NSInteger,PayType)
+{
+    PayTypeInvest = 0
+};
 
+@interface InputPassViewController : UIViewController
+@property (weak, nonatomic) IBOutlet UITextField *pass;
+@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
+@property (nonatomic)PayType type;
+
+
+- (IBAction)suerAction:(id)sender;
+
+- (id)initWithInvestData:(NSDictionary *)investData price:(CGFloat)price redNumber:(NSInteger)red  isRedBool:(BOOL)isRed;
 @end

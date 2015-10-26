@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <ZBarReaderView.h>
 
 @interface ZBarViewController : UIViewController
+@property (weak, nonatomic) IBOutlet ZBarReaderView *readerView;
+@property (weak, nonatomic) IBOutlet UIView *redLine;
+
 
 @end

@@ -17,7 +17,7 @@
     if(!self){
         return nil;
     }
-        
+    
     [self setDefaultValues];
     
     return self;
@@ -40,9 +40,9 @@
     self.menuMonthTextFont = [UIFont systemFontOfSize:17.];
     self.weekDayTextFont = [UIFont systemFontOfSize:11];
     self.dayTextFont = [UIFont systemFontOfSize:[UIFont systemFontSize]];
-
+    
     self.dayFormat = @"dd";
-
+    
     // Day Background and Border
     self.dayBackgroundColor = [UIColor clearColor];
     self.dayBorderWidth = 0.0f;
@@ -55,7 +55,7 @@
     [self setDayTextColorForAll:[UIColor blackColor]];
     
     self.dayTextColorOtherMonth = [UIColor colorWithRed:152./256. green:147./256. blue:157./256. alpha:1.];
-
+    
     self.dayCircleColorSelected = [UIColor redColor];
     self.dayTextColorSelected = [UIColor whiteColor];
     self.dayDotColorSelected = [UIColor whiteColor];
@@ -71,6 +71,8 @@
     self.dayCircleColorTodayOtherMonth = self.dayCircleColorToday;
     self.dayTextColorTodayOtherMonth = self.dayTextColorToday;
     self.dayDotColorTodayOtherMonth = self.dayDotColorToday;
+    
+    self.activityDates = @[];
     
     self.monthBlock = ^NSString *(NSDate *date, JTCalendar *jt_calendar){
         NSCalendar *calendar = jt_calendar.calendarAppearance.calendar;

@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="15A178w" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="GathDetailViewController">
             <connections>
+                <outlet property="tableView" destination="LmQ-qa-bEb" id="zTL-J9-Xcg"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -13,7 +15,43 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="LmQ-qa-bEb">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                    <animations/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </tableView>
+            </subviews>
+            <animations/>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="LmQ-qa-bEb" secondAttribute="trailing" id="Lfl-W8-PVR"/>
+                <constraint firstItem="LmQ-qa-bEb" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="N8A-yM-p2n"/>
+                <constraint firstItem="LmQ-qa-bEb" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="dpP-C0-5uN"/>
+                <constraint firstAttribute="bottom" secondItem="LmQ-qa-bEb" secondAttribute="bottom" id="okY-RZ-uEy"/>
+            </constraints>
+            <variation key="default">
+                <mask key="subviews">
+                    <exclude reference="LmQ-qa-bEb"/>
+                </mask>
+                <mask key="constraints">
+                    <exclude reference="Lfl-W8-PVR"/>
+                    <exclude reference="N8A-yM-p2n"/>
+                    <exclude reference="dpP-C0-5uN"/>
+                    <exclude reference="okY-RZ-uEy"/>
+                </mask>
+            </variation>
+            <variation key="heightClass=regular-widthClass=compact">
+                <mask key="subviews">
+                    <include reference="LmQ-qa-bEb"/>
+                </mask>
+                <mask key="constraints">
+                    <include reference="Lfl-W8-PVR"/>
+                    <include reference="N8A-yM-p2n"/>
+                    <include reference="dpP-C0-5uN"/>
+                    <include reference="okY-RZ-uEy"/>
+                </mask>
+            </variation>
         </view>
     </objects>
 </document>

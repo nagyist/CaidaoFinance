@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @protocol GZMenuListViewDelegate <NSObject>
--(void)didSelectedItem:(NSIndexPath*)indexPath value:(NSString*)value;
+-(void)didSelectedItem:(NSIndexPath*)indexPath value:(NSString*)value tag:(NSInteger)tag;
 @end
 
 @protocol GZMenuListViewDataSource;
@@ -28,6 +28,8 @@
 
 @property(nonatomic,strong)UIView * menuSuperView;
 @property(nonatomic,strong)UIImage * bgImg;
+@property(nonatomic,strong)NSString *placeStr;
+@property(nonatomic)NSInteger  selectedIndex;
 ////初始化
 -(id)init;
 

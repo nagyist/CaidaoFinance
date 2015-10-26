@@ -11,6 +11,7 @@
 @interface YLSwipeLockNodeView()
 @property (nonatomic, strong)CAShapeLayer *outlineLayer;
 @property (nonatomic, strong)CAShapeLayer *innerCircleLayer;
+@property (nonatomic, strong)UIImageView *innerImg;
 @end
 
 
@@ -20,7 +21,7 @@
     self = [super initWithFrame:frame];
     if (self) {
         [self.layer addSublayer:self.outlineLayer];
-        [self.layer addSublayer:self.innerCircleLayer];
+//        [self.layer addSublayer:self.innerCircleLayer];
         self.nodeViewStatus = YLSwipeLockNodeViewStatusNormal;
     }
     return self;
@@ -55,19 +56,25 @@
 -(void)setStatusToNormal
 {
     self.outlineLayer.strokeColor = LIGHTBLUE.CGColor;
-    self.innerCircleLayer.fillColor = [UIColor clearColor].CGColor;
+    self.outlineLayer.fillColor = LIGHTBLUE.CGColor;
+
+    self.innerImg.image = nil;
+//    self.innerCircleLayer.fillColor = [UIColor clearColor].CGColor;
 }
 
 -(void)setStatusToSelected
 {
-    self.outlineLayer.strokeColor = LIGHTBLUE.CGColor;
-    self.innerCircleLayer.fillColor = LIGHTBLUE.CGColor;
+//    self.outlineLayer.strokeColor = LIGHTBLUE.CGColor;
+    self.innerImg.image = UIIMAGE(@"touch_pass_icon");
+//    self.innerCircleLayer.fillColor = LIGHTBLUE.CGColor;
 }
 
 -(void)setStatusToWarning
 {
     self.outlineLayer.strokeColor = [UIColor redColor].CGColor;
-    self.innerCircleLayer.fillColor = [UIColor redColor].CGColor;
+    self.outlineLayer.fillColor = [UIColor redColor].CGColor;
+    self.innerImg.image = nil;
+//    self.innerCircleLayer.fillColor = [UIColor redColor].CGColor;
     
 }
 
@@ -81,9 +88,24 @@
     CGRect frame = self.bounds;
     CGFloat width = frame.size.width / 3;
     self.innerCircleLayer.frame = CGRectMake(width, width, width, width);
-    UIBezierPath *innerPath = [UIBezierPath bezierPathWithOvalInRect:self.innerCircleLayer.bounds];
-    self.innerCircleLayer.path = innerPath.CGPath;
+    ///临时
+   
+//    UIBezierPath *innerPath = [UIBezierPath bezierPathWithOvalInRect:self.innerCircleLayer.bounds];
+//    self.innerCircleLayer.path = innerPath.CGPath;
     
+    self.innerImg = [[UIImageView alloc] initWithFrame:CGRectMake(width, width, width, width)];
+    self.innerImg.layer.masksToBounds = YES;
+//    self.innerImg.image = UIIMAGE(@"qscan");
+    self.innerImg.layer.cornerRadius = 13;
+    [self addSubview:self.innerImg];
+    [self.innerImg mas_makeConstraints:^(MASConstraintMaker*make)
+     {
+         make.left.equalTo(@0);
+         make.right.equalTo(@0);
+         make.top.equalTo(@0);
+         make.bottom.equalTo(@0);
+
+     }];
 }
 
 -(CAShapeLayer *)outlineLayer
@@ -91,8 +113,8 @@
     if (_outlineLayer == nil) {
         _outlineLayer = [[CAShapeLayer alloc] init];
         _outlineLayer.strokeColor = LIGHTBLUE.CGColor;
-        _outlineLayer.lineWidth = 5.0f;
-        _outlineLayer.fillColor  = [UIColor clearColor].CGColor;
+        _outlineLayer.lineWidth = 32.0f;
+        _outlineLayer.fillColor  = LIGHTBLUE.CGColor;
     }
     return _outlineLayer;
 }
@@ -102,7 +124,7 @@
     if (_innerCircleLayer == nil) {
         _innerCircleLayer = [[CAShapeLayer alloc] init];
         _innerCircleLayer.strokeColor = [UIColor clearColor].CGColor;
-        _innerCircleLayer.lineWidth = 1.0f;
+        _innerCircleLayer.lineWidth = 0.0f;
         _innerCircleLayer.fillColor  = LIGHTBLUE.CGColor;
     }
     return _innerCircleLayer;

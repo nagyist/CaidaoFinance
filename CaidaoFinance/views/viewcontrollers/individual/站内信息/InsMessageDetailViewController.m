@@ -7,8 +7,11 @@
 //
 
 #import "InsMessageDetailViewController.h"
+#import "GZNetConnectManager.h"
 
-@interface InsMessageDetailViewController ()
+@interface InsMessageDetailViewController () {
+    NSDictionary * detailData;
+}
 
 @end
 
@@ -16,7 +19,29 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.title = @"站内信息";
+    [self setData];
     // Do any additional setup after loading the view from its nib.
+}
+
+- (void)setData {
+    NSString * user = [[detailData objectForKey:@"sendUserAccount"] isEqualToString:@"EastAdmin"]?@"财道金融":[detailData objectForKey:@"sendUserAccount"];
+    NSDictionary * timedata = [detailData objectForKey:@"messageSendDateTime"];
+    NSString * time = [NSString stringWithFormat:@"%ld-%ld-%ld %ld:%ld:%ld 来自\"%@\"",[[timedata objectForKey:@"year"] integerValue],[[timedata objectForKey:@"month"] integerValue],[[timedata objectForKey:@"day"] integerValue],[[timedata objectForKey:@"hours"] integerValue],[[timedata objectForKey:@"minutes"] integerValue],[[timedata objectForKey:@"seconds"] integerValue],user];
+    self.msgTitle.text = [detailData objectForKey:@"messageTitle"];
+    self.text.text = [detailData objectForKey:@"messageContent"];
+    self.time.text = time;
+    [[GZNetConnectManager sharedInstance] conURL:[NSString stringWithFormat:@"%@%@?msgId=%@",TEST_NETADDRESS,MESSAGECONTENT,[[detailData objectForKey:@"id"] stringValue]] connectType:connectType_GET params:nil result:^(BOOL bSuccess, id returnData, NSError *error) {
+        
+    }];
+}
+
+- (id)initWithDetailData:(NSDictionary *)data {
+    if (self) {
+        detailData = data;
+        
+    }
+    return self;
 }
 
 - (void)didReceiveMemoryWarning {

@@ -9,5 +9,9 @@
 #import <UIKit/UIKit.h>
 
 @interface LoginViewController : UIViewController
+- (IBAction)forgetAction:(id)sender;
+- (IBAction)registerAction:(id)sender;
+- (IBAction)loginAction:(id)sender;
+@property (weak, nonatomic) IBOutlet UIButton *loginButton;
 
 @end

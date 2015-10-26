@@ -9,5 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface SendMailViewController : UIViewController
+@property (weak, nonatomic) IBOutlet UITextView *text;
+- (id)initWithFriendData:(NSDictionary*)friendData;
 
 @end

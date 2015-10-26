@@ -8,14 +8,31 @@
 
 #import "CreditViewController.h"
 
-@interface CreditViewController ()
+@interface CreditViewController (){
+    NSDictionary * detailData;
+
+}
 
 @end
 
 @implementation CreditViewController
 
+- (id)initWithDetailData:(NSDictionary *)data
+{
+    if (self) {
+        detailData = data;
+    }
+    return self;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.bishu.text =  [[detailData objectForKey:@"borrowNumber"] stringValue];
+    self.cishu.text =  [[detailData objectForKey:@"repayOverdueCount"] stringValue];
+    self.jieru.text =  [[detailData objectForKey:@"borrowSuccessSum"] stringValue];
+    self.yuqi.text =  [detailData objectForKey:@"currentOverdue"];
+    self.zonge.text =  [NSString stringWithFormat:@"￥%@",[NSString stringWithFormat:@"%.2f",[[detailData objectForKey:@"borrowSum"] floatValue]]];
+    self.huan.text = [NSString stringWithFormat:@"￥%@",[NSString stringWithFormat:@"%.2f",[[detailData objectForKey:@"currentOverdueAmount"] floatValue]]];
     // Do any additional setup after loading the view from its nib.
 }
 

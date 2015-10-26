@@ -10,4 +10,11 @@
 
 @interface BindCardPreviewViewController : UIViewController
 
+- (id)initWithBinbankData:(NSDictionary*)bindData;
+@property (weak, nonatomic) IBOutlet UILabel *name;
+@property (weak, nonatomic) IBOutlet UILabel *bankName;
+@property (weak, nonatomic) IBOutlet UILabel *bankArea;
+@property (weak, nonatomic) IBOutlet UILabel *bankAreaName;
+@property (weak, nonatomic) IBOutlet UILabel *cardNum;
+
 @end

@@ -7,7 +7,7 @@
 //
 
 #import "NetManager.h"
-#import <SVProgressHUD.h>
+#import "SVProgressHUD.h"
 #import "Reachability.h"
 
 
@@ -28,7 +28,7 @@
                        });
         if (type == connectType_GET) {
             AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-            [manager GET:[NSString stringWithFormat:@"%@%@",NETDOMAIN,url] parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+            [manager GET:[NSString stringWithFormat:@"%@%@",TEST_NETADDRESS,url] parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
                 NSLog(@"JSON: %@", responseObject);
                 if (block) {
                     [SVProgressHUD dismiss];
@@ -45,7 +45,7 @@
         {
             AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
             NSDictionary *parameters = params;
-            [manager POST:[NSString stringWithFormat:@"%@%@",NETDOMAIN,url] parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
+            [manager POST:[NSString stringWithFormat:@"%@%@",TEST_NETADDRESS,url] parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
                 NSLog(@"JSON: %@", responseObject);
                 if (block) {
                     [SVProgressHUD dismiss];

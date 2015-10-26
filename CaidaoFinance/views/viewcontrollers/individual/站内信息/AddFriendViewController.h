@@ -8,6 +8,23 @@
 
 #import <UIKit/UIKit.h>
 
+typedef NS_ENUM(NSInteger, AddFriendType) {
+    AddFriendTypeCode = 0,
+    AddFriendTypeTel,
+    AddFriendTypeName
+};
+
+
 @interface AddFriendViewController : UIViewController
+@property (weak, nonatomic) IBOutlet UILabel *LabelOne;
+@property (weak, nonatomic) IBOutlet UILabel *labelTwo;
+- (IBAction)sureAction:(id)sender;
+
+@property (weak, nonatomic) IBOutlet UITextField *txtTwo;
+@property (weak, nonatomic) IBOutlet UITextField *txtOne;
+
+@property (nonatomic)AddFriendType type;
+
+- (id)initWithQscanData:(NSString*)data;
 
 @end

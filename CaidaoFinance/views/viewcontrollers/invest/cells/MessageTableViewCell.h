@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface MessageTableViewCell : UITableViewCell
-
+@property (weak, nonatomic) IBOutlet UILabel *text;
+-(CGFloat)calulateHeightWithDesrip:(NSString *)str;
 @end

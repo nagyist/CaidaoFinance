@@ -1,11 +1,28 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="15A178w" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="Hiragino Sans GB W3.otf">
+            <string>HiraginoSansGB-W3</string>
+            <string>HiraginoSansGB-W3</string>
+            <string>HiraginoSansGB-W3</string>
+            <string>HiraginoSansGB-W3</string>
+            <string>HiraginoSansGB-W3</string>
+            <string>HiraginoSansGB-W3</string>
+            <string>HiraginoSansGB-W3</string>
+            <string>HiraginoSansGB-W3</string>
+        </mutableArray>
+    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="NamePreviewViewController">
             <connections>
+                <outlet property="address" destination="1IX-rK-b7s" id="aeG-Qd-cB6"/>
+                <outlet property="area" destination="IUi-cj-BKn" id="l1K-Jc-Ie6"/>
+                <outlet property="cardNum" destination="9IR-G6-EA9" id="fZM-6w-pMT"/>
+                <outlet property="name" destination="1wc-rC-Kdw" id="TsN-PT-4t8"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -13,7 +30,152 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="真实姓名：" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ho0-zd-EYL">
+                    <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                    <animations/>
+                    <fontDescription key="fontDescription" name="HiraginoSansGB-W3" family="Hiragino Sans GB" pointSize="16"/>
+                    <color key="textColor" red="0.5450980392" green="0.12549019610000001" blue="0.13725490200000001" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="身份证号：" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NBl-Co-YIn">
+                    <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                    <animations/>
+                    <fontDescription key="fontDescription" name="HiraginoSansGB-W3" family="Hiragino Sans GB" pointSize="16"/>
+                    <color key="textColor" red="0.5450980392" green="0.12549019610000001" blue="0.13725490200000001" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="所在地区：" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hEw-4t-xra">
+                    <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                    <animations/>
+                    <fontDescription key="fontDescription" name="HiraginoSansGB-W3" family="Hiragino Sans GB" pointSize="16"/>
+                    <color key="textColor" red="0.5450980392" green="0.12549019610000001" blue="0.13725490200000001" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="街道地址：" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Qn-cE-9e9">
+                    <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                    <animations/>
+                    <fontDescription key="fontDescription" name="HiraginoSansGB-W3" family="Hiragino Sans GB" pointSize="16"/>
+                    <color key="textColor" red="0.5450980392" green="0.12549019610000001" blue="0.13725490200000001" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="张三" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1wc-rC-Kdw">
+                    <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                    <animations/>
+                    <fontDescription key="fontDescription" name="HiraginoSansGB-W3" family="Hiragino Sans GB" pointSize="15"/>
+                    <color key="textColor" red="0.2274509804" green="0.2274509804" blue="0.2274509804" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="310108144525844110" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9IR-G6-EA9">
+                    <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                    <animations/>
+                    <fontDescription key="fontDescription" name="HiraginoSansGB-W3" family="Hiragino Sans GB" pointSize="14"/>
+                    <color key="textColor" red="0.2274509804" green="0.2274509804" blue="0.2274509804" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="上海市浦东新区" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IUi-cj-BKn">
+                    <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                    <animations/>
+                    <fontDescription key="fontDescription" name="HiraginoSansGB-W3" family="Hiragino Sans GB" pointSize="14"/>
+                    <color key="textColor" red="0.2274509804" green="0.2274509804" blue="0.2274509804" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="张江高科" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1IX-rK-b7s">
+                    <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                    <animations/>
+                    <fontDescription key="fontDescription" name="HiraginoSansGB-W3" family="Hiragino Sans GB" pointSize="14"/>
+                    <color key="textColor" red="0.2274509804" green="0.2274509804" blue="0.2274509804" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <animations/>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="5Qn-cE-9e9" firstAttribute="centerY" secondItem="1IX-rK-b7s" secondAttribute="centerY" constant="3" id="1Vb-xQ-1cE">
+                    <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
+                </constraint>
+                <constraint firstItem="hEw-4t-xra" firstAttribute="top" secondItem="NBl-Co-YIn" secondAttribute="bottom" constant="29" id="4ra-KD-Ygk">
+                    <variation key="heightClass=regular-widthClass=compact" constant="31"/>
+                </constraint>
+                <constraint firstItem="1wc-rC-Kdw" firstAttribute="centerY" secondItem="Ho0-zd-EYL" secondAttribute="centerY" id="97C-dP-N0R"/>
+                <constraint firstItem="5Qn-cE-9e9" firstAttribute="top" secondItem="hEw-4t-xra" secondAttribute="bottom" constant="29" id="BBt-bK-z8b">
+                    <variation key="heightClass=regular-widthClass=compact" constant="25"/>
+                </constraint>
+                <constraint firstItem="9IR-G6-EA9" firstAttribute="centerY" secondItem="NBl-Co-YIn" secondAttribute="centerY" id="F7o-9P-NRI"/>
+                <constraint firstItem="IUi-cj-BKn" firstAttribute="leading" secondItem="hEw-4t-xra" secondAttribute="trailing" constant="23" id="FPm-Bc-U6H"/>
+                <constraint firstItem="Ho0-zd-EYL" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="36" id="Gd7-g6-HuE"/>
+                <constraint firstItem="5Qn-cE-9e9" firstAttribute="leading" secondItem="hEw-4t-xra" secondAttribute="leading" id="HGG-2j-LGI"/>
+                <constraint firstItem="9IR-G6-EA9" firstAttribute="leading" secondItem="NBl-Co-YIn" secondAttribute="trailing" constant="18" id="ShG-60-WMV"/>
+                <constraint firstItem="hEw-4t-xra" firstAttribute="leading" secondItem="NBl-Co-YIn" secondAttribute="leading" id="aTv-qH-pD5"/>
+                <constraint firstItem="Ho0-zd-EYL" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="34" id="bDW-gZ-onC"/>
+                <constraint firstItem="1IX-rK-b7s" firstAttribute="leading" secondItem="5Qn-cE-9e9" secondAttribute="trailing" constant="23" id="jQx-Vf-3pv"/>
+                <constraint firstItem="Ho0-zd-EYL" firstAttribute="leading" secondItem="NBl-Co-YIn" secondAttribute="leading" id="nQC-u8-l44"/>
+                <constraint firstItem="IUi-cj-BKn" firstAttribute="centerY" secondItem="hEw-4t-xra" secondAttribute="centerY" constant="4" id="pBp-Vq-NfP">
+                    <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
+                </constraint>
+                <constraint firstItem="NBl-Co-YIn" firstAttribute="top" secondItem="Ho0-zd-EYL" secondAttribute="bottom" constant="29" id="yyl-Ta-42Z"/>
+                <constraint firstItem="1wc-rC-Kdw" firstAttribute="leading" secondItem="Ho0-zd-EYL" secondAttribute="trailing" constant="23" id="zNT-UI-Czx"/>
+            </constraints>
+            <variation key="default">
+                <mask key="subviews">
+                    <exclude reference="Ho0-zd-EYL"/>
+                    <exclude reference="NBl-Co-YIn"/>
+                    <exclude reference="hEw-4t-xra"/>
+                    <exclude reference="5Qn-cE-9e9"/>
+                    <exclude reference="1wc-rC-Kdw"/>
+                    <exclude reference="9IR-G6-EA9"/>
+                    <exclude reference="IUi-cj-BKn"/>
+                    <exclude reference="1IX-rK-b7s"/>
+                </mask>
+                <mask key="constraints">
+                    <exclude reference="jQx-Vf-3pv"/>
+                    <exclude reference="97C-dP-N0R"/>
+                    <exclude reference="zNT-UI-Czx"/>
+                    <exclude reference="1Vb-xQ-1cE"/>
+                    <exclude reference="BBt-bK-z8b"/>
+                    <exclude reference="HGG-2j-LGI"/>
+                    <exclude reference="F7o-9P-NRI"/>
+                    <exclude reference="ShG-60-WMV"/>
+                    <exclude reference="Gd7-g6-HuE"/>
+                    <exclude reference="bDW-gZ-onC"/>
+                    <exclude reference="nQC-u8-l44"/>
+                    <exclude reference="FPm-Bc-U6H"/>
+                    <exclude reference="pBp-Vq-NfP"/>
+                    <exclude reference="yyl-Ta-42Z"/>
+                    <exclude reference="4ra-KD-Ygk"/>
+                    <exclude reference="aTv-qH-pD5"/>
+                </mask>
+            </variation>
+            <variation key="heightClass=regular-widthClass=compact">
+                <mask key="subviews">
+                    <include reference="Ho0-zd-EYL"/>
+                    <include reference="NBl-Co-YIn"/>
+                    <include reference="hEw-4t-xra"/>
+                    <include reference="5Qn-cE-9e9"/>
+                    <include reference="1wc-rC-Kdw"/>
+                    <include reference="9IR-G6-EA9"/>
+                    <include reference="IUi-cj-BKn"/>
+                    <include reference="1IX-rK-b7s"/>
+                </mask>
+                <mask key="constraints">
+                    <include reference="jQx-Vf-3pv"/>
+                    <include reference="97C-dP-N0R"/>
+                    <include reference="zNT-UI-Czx"/>
+                    <include reference="1Vb-xQ-1cE"/>
+                    <include reference="BBt-bK-z8b"/>
+                    <include reference="HGG-2j-LGI"/>
+                    <include reference="F7o-9P-NRI"/>
+                    <include reference="ShG-60-WMV"/>
+                    <include reference="Gd7-g6-HuE"/>
+                    <include reference="bDW-gZ-onC"/>
+                    <include reference="nQC-u8-l44"/>
+                    <include reference="FPm-Bc-U6H"/>
+                    <include reference="pBp-Vq-NfP"/>
+                    <include reference="yyl-Ta-42Z"/>
+                    <include reference="4ra-KD-Ygk"/>
+                    <include reference="aTv-qH-pD5"/>
+                </mask>
+            </variation>
         </view>
     </objects>
 </document>

@@ -9,5 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface LendDetailViewController : UIViewController
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
+- (id)initWithBorrowerData:(NSDictionary*)data;
 
 @end

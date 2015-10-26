@@ -170,6 +170,11 @@ typedef NSString *(^JTCalendarMonthBlock)(NSDate *date, JTCalendar *jt_calendar)
 @property (nonatomic) UIColor *dayTextColorTodayOtherMonth;
 
 /**
+ *  The default value of this property is @c whiteColor.
+ */
+@property (nonatomic) UIColor *dayTextColorActivity;
+
+/**
  *	The default value of this property is:
  *	@code [UIFont systemFontOfSize:[UIFont systemFontSize]] @endcode
  */
@@ -206,6 +211,11 @@ typedef NSString *(^JTCalendarMonthBlock)(NSDate *date, JTCalendar *jt_calendar)
  *	The default value of this property is @c 1.0 / 9.0.
  */
 @property (assign, nonatomic) CGFloat dayDotRatio;
+
+/**
+ *  活动日期数据 可对除当日外其他日期做一些处理 @c NSDate
+ */
+@property (nonatomic,strong)NSMutableDictionary *activityDates;
 
 /**
  *	The default value of this property is a @c Gregorian calendar.

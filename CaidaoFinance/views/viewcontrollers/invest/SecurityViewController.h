@@ -9,5 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @interface SecurityViewController : UIViewController
+@property (weak, nonatomic) IBOutlet UILabel *text;
+@property (weak, nonatomic) IBOutlet UIView *contentView;
+- (id)initWithDetailData:(NSDictionary*)data;
 
 @end

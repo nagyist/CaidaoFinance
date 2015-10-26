@@ -9,5 +9,10 @@
 #import <UIKit/UIKit.h>
 
 @interface ModifyTelSecondViewController : UIViewController
+- (IBAction)sureAction:(id)sender;
+
+- (IBAction)vertyAction:(id)sender;
+@property (weak, nonatomic) IBOutlet UIButton *vertyButton;
+@property (weak, nonatomic) IBOutlet UIButton *sureButton;
 
 @end

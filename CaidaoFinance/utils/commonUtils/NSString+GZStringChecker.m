@@ -59,8 +59,15 @@
     BOOL res = [regextestemail evaluateWithObject:email];
     
     return res;
-    
+}
 
++(BOOL)checkCharacterReg:(NSString *)text {
+    NSString * charcter = @"^[\u4E00-\u9FA5]*$";
+    NSPredicate *regextestcharcter = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", charcter];
+    BOOL res = [regextestcharcter evaluateWithObject:text];
+    
+    return res;
+    
 }
 
 

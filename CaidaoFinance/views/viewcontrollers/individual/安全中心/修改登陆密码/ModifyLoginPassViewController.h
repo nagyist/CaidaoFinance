@@ -9,5 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @interface ModifyLoginPassViewController : UIViewController
+@property (weak, nonatomic) IBOutlet UITextField *txt1;
+@property (weak, nonatomic) IBOutlet UITextField *txt2;
+@property (weak, nonatomic) IBOutlet UITextField *txt3;
 
 @end

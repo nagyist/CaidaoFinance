@@ -8,6 +8,17 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol FriendCellDelegate <NSObject>
+
+- (void)sendMail:(NSInteger)index;
+
+@end
+
 @interface FriendsCell : UITableViewCell
+@property (weak, nonatomic) IBOutlet UIImageView *avatar;
+@property (weak, nonatomic) IBOutlet UILabel *name;
+- (IBAction)mailAction:(id)sender;
+
+@property (nonatomic,strong)id<FriendCellDelegate>delegate;
 
 @end

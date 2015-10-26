@@ -1,18 +1,33 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="PicCell">
-            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="PicCell" id="gTV-IL-0wX" customClass="PicCell">
+            <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ZsQ-2m-sP5">
+                        <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
+                    </imageView>
+                </subviews>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             </view>
+            <constraints>
+                <constraint firstItem="ZsQ-2m-sP5" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="0mo-OZ-fW9"/>
+                <constraint firstItem="ZsQ-2m-sP5" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="3hk-R9-NYO"/>
+                <constraint firstAttribute="trailing" secondItem="ZsQ-2m-sP5" secondAttribute="trailing" id="603-Lw-mLE"/>
+                <constraint firstAttribute="bottom" secondItem="ZsQ-2m-sP5" secondAttribute="bottom" id="Gn7-91-aOY"/>
+            </constraints>
+            <connections>
+                <outlet property="pic" destination="ZsQ-2m-sP5" id="LH5-FI-vTm"/>
+            </connections>
         </collectionViewCell>
     </objects>
 </document>

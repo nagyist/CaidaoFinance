@@ -245,7 +245,7 @@
 {
     if (_polygonalLineLayer == nil) {
         _polygonalLineLayer = [[CAShapeLayer alloc] init];
-        _polygonalLineLayer.lineWidth = 6.0f;
+        _polygonalLineLayer.lineWidth = 12.0f;
         _polygonalLineLayer.strokeColor = LIGHTBLUE.CGColor;
         _polygonalLineLayer.fillColor = [UIColor clearColor].CGColor;
     }

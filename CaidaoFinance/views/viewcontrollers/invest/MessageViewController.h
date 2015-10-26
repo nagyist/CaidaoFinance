@@ -9,5 +9,11 @@
 #import <UIKit/UIKit.h>
 
 @interface MessageViewController : UIViewController
+- (IBAction)cellAction:(id)sender;
+- (IBAction)sendAction:(id)sender;
+@property (weak, nonatomic) IBOutlet UITextField *text;
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
+
+- (id)initWithInvestData:(NSDictionary*)investData;
 
 @end

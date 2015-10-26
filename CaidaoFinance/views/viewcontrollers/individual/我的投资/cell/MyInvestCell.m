@@ -16,8 +16,19 @@
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
-
+    
     // Configure the view for the selected state
 }
 
+- (IBAction)watchAction:(id)sender {
+    if ([_delegate respondsToSelector:@selector(didWatch:)]) {
+        [_delegate didWatch:self.tag];
+    }
+}
+
+- (IBAction)makeoverAction:(id)sender {
+    if ([_delegate respondsToSelector:@selector(didMakeOver:)]) {
+        [_delegate didMakeOver:self.tag];
+    }
+}
 @end

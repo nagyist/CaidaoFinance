@@ -9,5 +9,12 @@
 #import <UIKit/UIKit.h>
 
 @interface PersonInfoViewController : UIViewController
+- (IBAction)cellAction:(id)sender;
+@property (weak, nonatomic) IBOutlet UILabel *yzlabel;
+@property (weak, nonatomic) IBOutlet UILabel *bindingLabel;
+@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
+@property (weak, nonatomic) IBOutlet UILabel *tel;
+
+- (id)initWithPersonData:(NSDictionary*)data;
 
 @end

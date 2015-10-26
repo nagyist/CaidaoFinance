@@ -1,11 +1,23 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="Hiragino Sans GB W3.otf">
+            <string>HiraginoSansGB-W3</string>
+            <string>HiraginoSansGB-W3</string>
+            <string>HiraginoSansGB-W3</string>
+            <string>HiraginoSansGB-W3</string>
+        </mutableArray>
+    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RuleViewController">
             <connections>
+                <outlet property="ruleLabelOne" destination="g96-hM-CjO" id="XeB-9c-lnp"/>
+                <outlet property="ruleLabelTwo" destination="ho6-72-MSV" id="mqK-gQ-bme"/>
+                <outlet property="scrollView" destination="Iar-Fz-mZE" id="kCx-UX-ieW"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -13,7 +25,173 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Iar-Fz-mZE">
+                    <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iHz-RM-3xt">
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="什么是自动投标" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FZo-Ce-i1k">
+                                    <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                    <fontDescription key="fontDescription" name="HiraginoSansGB-W3" family="Hiragino Sans GB" pointSize="15"/>
+                                    <color key="textColor" red="0.5450980392" green="0.12549019610000001" blue="0.13725490200000001" alpha="1" colorSpace="calibratedRGB"/>
+                                    <nil key="highlightedColor"/>
+                                    <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                        <rect key="frame" x="23" y="23" width="105" height="18"/>
+                                    </variation>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="123" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g96-hM-CjO">
+                                    <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                    <fontDescription key="fontDescription" name="HiraginoSansGB-W3" family="Hiragino Sans GB" pointSize="14"/>
+                                    <color key="textColor" red="0.57647058819999997" green="0.58823529409999997" blue="0.59215686270000001" alpha="1" colorSpace="calibratedRGB"/>
+                                    <nil key="highlightedColor"/>
+                                    <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                        <rect key="frame" x="23" y="49" width="359" height="17"/>
+                                    </variation>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="123" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ho6-72-MSV">
+                                    <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                    <fontDescription key="fontDescription" name="HiraginoSansGB-W3" family="Hiragino Sans GB" pointSize="14"/>
+                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                    <nil key="highlightedColor"/>
+                                    <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                        <rect key="frame" x="23" y="119" width="359" height="17"/>
+                                    </variation>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="自动投标服务说明" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xgp-1X-0MI">
+                                    <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                    <fontDescription key="fontDescription" name="HiraginoSansGB-W3" family="Hiragino Sans GB" pointSize="15"/>
+                                    <color key="textColor" red="0.5450980392" green="0.12549019610000001" blue="0.13725490200000001" alpha="1" colorSpace="calibratedRGB"/>
+                                    <nil key="highlightedColor"/>
+                                    <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                        <rect key="frame" x="23" y="93" width="120" height="18"/>
+                                    </variation>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstItem="xgp-1X-0MI" firstAttribute="top" secondItem="FZo-Ce-i1k" secondAttribute="bottom" constant="157" id="05v-yb-s09"/>
+                                <constraint firstItem="ho6-72-MSV" firstAttribute="top" secondItem="xgp-1X-0MI" secondAttribute="bottom" constant="8" id="7J3-Gy-VzW"/>
+                                <constraint firstItem="FZo-Ce-i1k" firstAttribute="top" secondItem="iHz-RM-3xt" secondAttribute="top" constant="23" id="BZV-hv-pUy"/>
+                                <constraint firstAttribute="trailing" secondItem="g96-hM-CjO" secondAttribute="trailing" constant="18" id="EYf-r8-U11"/>
+                                <constraint firstItem="FZo-Ce-i1k" firstAttribute="leading" secondItem="iHz-RM-3xt" secondAttribute="leading" constant="23" id="Jbf-1T-raS"/>
+                                <constraint firstItem="g96-hM-CjO" firstAttribute="leading" secondItem="FZo-Ce-i1k" secondAttribute="leading" id="L3e-Gl-gM4"/>
+                                <constraint firstAttribute="trailing" secondItem="ho6-72-MSV" secondAttribute="trailing" constant="18" id="PXm-Gu-p7K"/>
+                                <constraint firstItem="xgp-1X-0MI" firstAttribute="top" secondItem="g96-hM-CjO" secondAttribute="bottom" constant="27" id="QLZ-oG-lHI"/>
+                                <constraint firstItem="g96-hM-CjO" firstAttribute="top" secondItem="FZo-Ce-i1k" secondAttribute="bottom" constant="8" id="b4G-8i-MSP"/>
+                                <constraint firstItem="xgp-1X-0MI" firstAttribute="leading" secondItem="FZo-Ce-i1k" secondAttribute="leading" id="dqn-0K-86k"/>
+                                <constraint firstItem="ho6-72-MSV" firstAttribute="leading" secondItem="xgp-1X-0MI" secondAttribute="leading" id="mF4-fp-nvI"/>
+                            </constraints>
+                            <variation key="default">
+                                <mask key="subviews">
+                                    <exclude reference="FZo-Ce-i1k"/>
+                                    <exclude reference="g96-hM-CjO"/>
+                                    <exclude reference="ho6-72-MSV"/>
+                                    <exclude reference="xgp-1X-0MI"/>
+                                </mask>
+                                <mask key="constraints">
+                                    <exclude reference="BZV-hv-pUy"/>
+                                    <exclude reference="Jbf-1T-raS"/>
+                                    <exclude reference="EYf-r8-U11"/>
+                                    <exclude reference="L3e-Gl-gM4"/>
+                                    <exclude reference="b4G-8i-MSP"/>
+                                    <exclude reference="7J3-Gy-VzW"/>
+                                    <exclude reference="PXm-Gu-p7K"/>
+                                    <exclude reference="mF4-fp-nvI"/>
+                                    <exclude reference="05v-yb-s09"/>
+                                    <exclude reference="QLZ-oG-lHI"/>
+                                    <exclude reference="dqn-0K-86k"/>
+                                </mask>
+                            </variation>
+                            <variation key="heightClass=regular-widthClass=compact">
+                                <mask key="subviews">
+                                    <include reference="FZo-Ce-i1k"/>
+                                    <include reference="g96-hM-CjO"/>
+                                    <include reference="ho6-72-MSV"/>
+                                    <include reference="xgp-1X-0MI"/>
+                                </mask>
+                                <mask key="constraints">
+                                    <include reference="BZV-hv-pUy"/>
+                                    <include reference="Jbf-1T-raS"/>
+                                    <include reference="EYf-r8-U11"/>
+                                    <include reference="L3e-Gl-gM4"/>
+                                    <include reference="b4G-8i-MSP"/>
+                                    <include reference="7J3-Gy-VzW"/>
+                                    <include reference="PXm-Gu-p7K"/>
+                                    <include reference="mF4-fp-nvI"/>
+                                    <exclude reference="05v-yb-s09"/>
+                                    <include reference="QLZ-oG-lHI"/>
+                                    <include reference="dqn-0K-86k"/>
+                                </mask>
+                            </variation>
+                        </view>
+                    </subviews>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="iHz-RM-3xt" secondAttribute="trailing" id="Drb-ck-hUa"/>
+                        <constraint firstItem="iHz-RM-3xt" firstAttribute="height" secondItem="Iar-Fz-mZE" secondAttribute="height" id="KYv-zg-McP"/>
+                        <constraint firstItem="iHz-RM-3xt" firstAttribute="width" secondItem="Iar-Fz-mZE" secondAttribute="width" id="Rx2-DF-pVf"/>
+                        <constraint firstItem="iHz-RM-3xt" firstAttribute="leading" secondItem="Iar-Fz-mZE" secondAttribute="leading" id="fjo-Qe-zTf"/>
+                        <constraint firstAttribute="bottom" secondItem="iHz-RM-3xt" secondAttribute="bottom" id="odZ-lp-cui"/>
+                        <constraint firstItem="iHz-RM-3xt" firstAttribute="top" secondItem="Iar-Fz-mZE" secondAttribute="top" id="zsj-w6-BpD"/>
+                    </constraints>
+                    <variation key="default">
+                        <mask key="subviews">
+                            <exclude reference="iHz-RM-3xt"/>
+                        </mask>
+                        <mask key="constraints">
+                            <exclude reference="Drb-ck-hUa"/>
+                            <exclude reference="KYv-zg-McP"/>
+                            <exclude reference="Rx2-DF-pVf"/>
+                            <exclude reference="fjo-Qe-zTf"/>
+                            <exclude reference="odZ-lp-cui"/>
+                            <exclude reference="zsj-w6-BpD"/>
+                        </mask>
+                    </variation>
+                    <variation key="heightClass=regular-widthClass=compact">
+                        <mask key="subviews">
+                            <include reference="iHz-RM-3xt"/>
+                        </mask>
+                        <mask key="constraints">
+                            <include reference="Drb-ck-hUa"/>
+                            <include reference="KYv-zg-McP"/>
+                            <include reference="Rx2-DF-pVf"/>
+                            <include reference="fjo-Qe-zTf"/>
+                            <include reference="odZ-lp-cui"/>
+                            <include reference="zsj-w6-BpD"/>
+                        </mask>
+                    </variation>
+                </scrollView>
+            </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="Iar-Fz-mZE" secondAttribute="bottom" id="Gc9-LJ-HWo"/>
+                <constraint firstAttribute="trailing" secondItem="Iar-Fz-mZE" secondAttribute="trailing" id="So8-ag-xNX"/>
+                <constraint firstItem="Iar-Fz-mZE" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="vkn-WV-OEy"/>
+                <constraint firstItem="Iar-Fz-mZE" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="wIm-th-R3T"/>
+            </constraints>
+            <variation key="default">
+                <mask key="subviews">
+                    <exclude reference="Iar-Fz-mZE"/>
+                </mask>
+                <mask key="constraints">
+                    <exclude reference="Gc9-LJ-HWo"/>
+                    <exclude reference="So8-ag-xNX"/>
+                    <exclude reference="vkn-WV-OEy"/>
+                    <exclude reference="wIm-th-R3T"/>
+                </mask>
+            </variation>
+            <variation key="heightClass=regular-widthClass=compact">
+                <mask key="subviews">
+                    <include reference="Iar-Fz-mZE"/>
+                </mask>
+                <mask key="constraints">
+                    <include reference="Gc9-LJ-HWo"/>
+                    <include reference="So8-ag-xNX"/>
+                    <include reference="vkn-WV-OEy"/>
+                    <include reference="wIm-th-R3T"/>
+                </mask>
+            </variation>
         </view>
     </objects>
 </document>

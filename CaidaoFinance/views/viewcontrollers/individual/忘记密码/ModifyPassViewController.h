@@ -9,5 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @interface ModifyPassViewController : UIViewController
+- (IBAction)loginAction:(id)sender;
+
+- (id)initWithPostData:(NSDictionary*)data;
 
 @end

@@ -9,5 +9,7 @@
 #import "CaidaoViewController.h"
 
 @interface SubmitSucViewController : CaidaoViewController
+- (IBAction)backAction:(id)sender;
+@property (weak, nonatomic) IBOutlet UILabel *time;
 
 @end

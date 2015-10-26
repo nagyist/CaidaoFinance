@@ -9,5 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface InvestRecordViewController : UIViewController
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
+- (id)initWithDetailData:(NSDictionary*)data;
 
 @end

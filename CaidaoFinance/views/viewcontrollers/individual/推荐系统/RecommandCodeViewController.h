@@ -9,5 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @interface RecommandCodeViewController : UIViewController
+- (IBAction)submitAction:(id)sender;
+@property (weak, nonatomic) IBOutlet UITextField *txtOne;
+@property (weak, nonatomic) IBOutlet UITextField *txtTwo;
 
 @end

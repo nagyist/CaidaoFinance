@@ -16,7 +16,12 @@
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
-
+    if (selected) {
+        _bgImg.image = UIIMAGE(@"individual_message_cell_selected_bg");
+    }
+    else{
+        _bgImg.image = UIIMAGE(@"individual_message_cell_bg");
+    }
     // Configure the view for the selected state
 }
 

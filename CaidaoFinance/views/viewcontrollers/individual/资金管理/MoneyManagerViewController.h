@@ -7,7 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <UICountingLabel.h>
 
 @interface MoneyManagerViewController : UIViewController
+- (IBAction)action:(id)sender;
+@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
+
+- (id)initWithIndiviData:(NSDictionary*)inData;
+@property (weak, nonatomic) IBOutlet UICountingLabel *moneyOne;
+@property (weak, nonatomic) IBOutlet UICountingLabel *moneyTwo;
+@property (weak, nonatomic) IBOutlet UICountingLabel *moneyThree;
+@property (weak, nonatomic) IBOutlet UICountingLabel *moneyFour;
 
 @end

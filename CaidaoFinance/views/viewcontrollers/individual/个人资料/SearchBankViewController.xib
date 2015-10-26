@@ -1,11 +1,19 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="15A178w" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="Hiragino Sans GB W3.otf">
+            <string>HiraginoSansGB-W3</string>
+        </mutableArray>
+    </customFonts>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ChooseBankLocationViewController">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SearchBankViewController">
             <connections>
+                <outlet property="searchTxt" destination="eqk-7N-1Wk" id="9fH-zN-i3a"/>
+                <outlet property="tableView" destination="9wj-k5-jad" id="CbN-Jt-hCf"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -13,7 +21,100 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="individual_search_bank_text_bg" translatesAutoresizingMaskIntoConstraints="NO" id="ncj-do-mfj">
+                    <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                    <animations/>
+                    <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                        <rect key="frame" x="8" y="8" width="385" height="53"/>
+                    </variation>
+                </imageView>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="输入银行网点名称" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eqk-7N-1Wk">
+                    <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
+                    <animations/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="28" id="514-Oh-brM"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="HiraginoSansGB-W3" family="Hiragino Sans GB" pointSize="15"/>
+                    <textInputTraits key="textInputTraits"/>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="514-Oh-brM"/>
+                        </mask>
+                    </variation>
+                    <variation key="heightClass=regular-widthClass=compact">
+                        <mask key="constraints">
+                            <include reference="514-Oh-brM"/>
+                        </mask>
+                    </variation>
+                </textField>
+                <tableView hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="9wj-k5-jad">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                    <animations/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                        <rect key="frame" x="8" y="69" width="384" height="731"/>
+                    </variation>
+                </tableView>
+            </subviews>
+            <animations/>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="9wj-k5-jad" secondAttribute="trailing" constant="8" id="6oS-Al-6XX"/>
+                <constraint firstAttribute="trailing" secondItem="ncj-do-mfj" secondAttribute="trailing" constant="7" id="FF5-5p-J2v"/>
+                <constraint firstAttribute="bottom" secondItem="9wj-k5-jad" secondAttribute="bottom" id="Pbu-9R-6O1"/>
+                <constraint firstItem="9wj-k5-jad" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="RkT-2a-crR"/>
+                <constraint firstItem="eqk-7N-1Wk" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="18" id="bJ3-UK-d3N"/>
+                <constraint firstItem="ncj-do-mfj" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="byb-rc-Xzn"/>
+                <constraint firstItem="ncj-do-mfj" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="8" id="l2A-dM-UwC"/>
+                <constraint firstAttribute="trailing" secondItem="eqk-7N-1Wk" secondAttribute="trailing" constant="16" id="pWM-qH-H0z"/>
+                <constraint firstItem="eqk-7N-1Wk" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="13" id="pY4-rB-YuL">
+                    <variation key="heightClass=regular-widthClass=compact" constant="15"/>
+                </constraint>
+                <constraint firstItem="9wj-k5-jad" firstAttribute="top" secondItem="ncj-do-mfj" secondAttribute="bottom" constant="8" id="rWR-Br-6t4"/>
+            </constraints>
+            <variation key="default">
+                <mask key="subviews">
+                    <exclude reference="ncj-do-mfj"/>
+                    <exclude reference="eqk-7N-1Wk"/>
+                    <exclude reference="9wj-k5-jad"/>
+                </mask>
+                <mask key="constraints">
+                    <exclude reference="bJ3-UK-d3N"/>
+                    <exclude reference="pWM-qH-H0z"/>
+                    <exclude reference="pY4-rB-YuL"/>
+                    <exclude reference="FF5-5p-J2v"/>
+                    <exclude reference="byb-rc-Xzn"/>
+                    <exclude reference="l2A-dM-UwC"/>
+                    <exclude reference="6oS-Al-6XX"/>
+                    <exclude reference="Pbu-9R-6O1"/>
+                    <exclude reference="RkT-2a-crR"/>
+                    <exclude reference="rWR-Br-6t4"/>
+                </mask>
+            </variation>
+            <variation key="heightClass=regular-widthClass=compact">
+                <mask key="subviews">
+                    <include reference="ncj-do-mfj"/>
+                    <include reference="eqk-7N-1Wk"/>
+                    <include reference="9wj-k5-jad"/>
+                </mask>
+                <mask key="constraints">
+                    <include reference="bJ3-UK-d3N"/>
+                    <include reference="pWM-qH-H0z"/>
+                    <include reference="pY4-rB-YuL"/>
+                    <include reference="FF5-5p-J2v"/>
+                    <include reference="byb-rc-Xzn"/>
+                    <include reference="l2A-dM-UwC"/>
+                    <include reference="6oS-Al-6XX"/>
+                    <include reference="Pbu-9R-6O1"/>
+                    <include reference="RkT-2a-crR"/>
+                    <include reference="rWR-Br-6t4"/>
+                </mask>
+            </variation>
+            <point key="canvasLocation" x="466" y="424"/>
         </view>
     </objects>
+    <resources>
+        <image name="individual_search_bank_text_bg" width="310" height="40"/>
+    </resources>
 </document>

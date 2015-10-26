@@ -9,5 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @interface VertiNameViewController : UIViewController
+@property (weak, nonatomic) IBOutlet UITextField *name;
+- (IBAction)locationAction:(id)sender;
+- (IBAction)vertyAction:(id)sender;
 
 @end

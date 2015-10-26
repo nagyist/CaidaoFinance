@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RecommendFriendViewController">
             <connections>
+                <outlet property="tableView" destination="a71-VZ-xOm" id="zRl-OQ-NyK"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -13,7 +15,41 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="a71-VZ-xOm">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </tableView>
+            </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="a71-VZ-xOm" secondAttribute="bottom" id="4UN-NP-Pxb"/>
+                <constraint firstItem="a71-VZ-xOm" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="78H-ci-8vB"/>
+                <constraint firstItem="a71-VZ-xOm" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="dLV-J2-xWF"/>
+                <constraint firstAttribute="trailing" secondItem="a71-VZ-xOm" secondAttribute="trailing" id="nUS-Tl-eHq"/>
+            </constraints>
+            <variation key="default">
+                <mask key="subviews">
+                    <exclude reference="a71-VZ-xOm"/>
+                </mask>
+                <mask key="constraints">
+                    <exclude reference="4UN-NP-Pxb"/>
+                    <exclude reference="78H-ci-8vB"/>
+                    <exclude reference="dLV-J2-xWF"/>
+                    <exclude reference="nUS-Tl-eHq"/>
+                </mask>
+            </variation>
+            <variation key="heightClass=regular-widthClass=compact">
+                <mask key="subviews">
+                    <include reference="a71-VZ-xOm"/>
+                </mask>
+                <mask key="constraints">
+                    <include reference="4UN-NP-Pxb"/>
+                    <include reference="78H-ci-8vB"/>
+                    <include reference="dLV-J2-xWF"/>
+                    <include reference="nUS-Tl-eHq"/>
+                </mask>
+            </variation>
         </view>
     </objects>
 </document>

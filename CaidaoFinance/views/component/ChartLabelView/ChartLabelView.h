@@ -10,4 +10,6 @@
 
 @interface ChartLabelView : UIView
 
+@property (nonatomic)NSArray * datas;
+
 @end

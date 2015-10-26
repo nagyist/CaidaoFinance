@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MessageViewController : UIViewController
+@interface InsMessageViewController : UIViewController
+- (IBAction)cellAction:(id)sender;
+@property (weak, nonatomic) IBOutlet UILabel *count;
+@property (weak, nonatomic) IBOutlet UIImageView *red;
 
 @end

@@ -448,9 +448,9 @@
         
         CGContextRef context = UIGraphicsGetCurrentContext();
         CGFloat R, G, B, A;
-        UIColor *uiColor = self.lineColor;
+        UIColor *uiColor = [UIColor blueColor];
         CGColorRef color = [uiColor CGColor];
-        int numComponents = CGColorGetNumberOfComponents(color);
+        CGFloat numComponents = CGColorGetNumberOfComponents(color);
         
         if( numComponents == 4)
         {
@@ -466,7 +466,7 @@
         
         CGContextFillRect(context, lineRect);
     }
-
+    
     // Calculate the offset of the text in the view
     CGPoint textOffset;
     NSRange glyphRange = [self.layoutManager glyphRangeForTextContainer:self.textContainer];
@@ -528,12 +528,10 @@
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
 {
     [super touchesEnded:touches withEvent:event];
-    
     // If the user dragged their finger we ignore the touch
     if (self.isTouchMoved)
     {
         self.selectedRange = NSMakeRange(0, 0);
-        
         return;
     }
     

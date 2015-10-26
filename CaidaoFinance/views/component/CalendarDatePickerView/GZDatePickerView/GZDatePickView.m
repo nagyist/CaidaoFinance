@@ -45,7 +45,7 @@
         
         
         _noDateColor=[UIColor darkGrayColor];
-        _dateColor=[UIColor whiteColor];
+        _dateColor=[UIColor darkGrayColor];
         _dateFont=[UIFont systemFontOfSize:16.0];
     }
     

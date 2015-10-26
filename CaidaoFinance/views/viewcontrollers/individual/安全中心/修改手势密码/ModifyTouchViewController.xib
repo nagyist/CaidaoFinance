@@ -1,11 +1,22 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="15A178w" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="Hiragino Sans GB W3.otf">
+            <string>HiraginoSansGB-W3</string>
+            <string>HiraginoSansGB-W3</string>
+            <string>HiraginoSansGB-W3</string>
+        </mutableArray>
+    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ModifyTouchViewController">
             <connections>
+                <outlet property="contentView" destination="vjQ-fe-12Q" id="IOX-Dw-hkK"/>
+                <outlet property="passTitle" destination="wi7-Zs-rFt" id="LRZ-KG-jlb"/>
+                <outlet property="sureButton" destination="riA-gC-Ulj" id="1Yr-JK-1jz"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -13,7 +24,132 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="输入原密码" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wi7-Zs-rFt">
+                    <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                    <animations/>
+                    <fontDescription key="fontDescription" name="HiraginoSansGB-W3" family="Hiragino Sans GB" pointSize="17"/>
+                    <color key="textColor" red="0.5450980392" green="0.12549019610000001" blue="0.13725490200000001" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vjQ-fe-12Q">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                    <animations/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </view>
+                <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zr2-pp-WuK">
+                    <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                    <animations/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="8aq-j2-fWg"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="HiraginoSansGB-W3" family="Hiragino Sans GB" pointSize="15"/>
+                    <state key="normal" title="确定" backgroundImage="individual_tip_bg">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="6"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                    </userDefinedRuntimeAttributes>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="8aq-j2-fWg"/>
+                        </mask>
+                    </variation>
+                    <variation key="heightClass=regular-widthClass=compact">
+                        <mask key="constraints">
+                            <include reference="8aq-j2-fWg"/>
+                        </mask>
+                    </variation>
+                    <connections>
+                        <action selector="sureAction:" destination="-1" eventType="touchUpInside" id="BaY-sV-P6m"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="riA-gC-Ulj">
+                    <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                    <animations/>
+                    <fontDescription key="fontDescription" name="HiraginoSansGB-W3" family="Hiragino Sans GB" pointSize="16"/>
+                    <state key="normal" title="忘记密码">
+                        <color key="titleColor" red="0.5450980392" green="0.12549019610000001" blue="0.13725490200000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="forgetAction:" destination="-1" eventType="touchUpInside" id="IVf-1r-EsH"/>
+                    </connections>
+                </button>
+            </subviews>
+            <animations/>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="vjQ-fe-12Q" firstAttribute="leading" secondItem="riA-gC-Ulj" secondAttribute="leading" id="0Ga-xf-GBL"/>
+                <constraint firstItem="wi7-Zs-rFt" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="49" id="0va-IX-nCW">
+                    <variation key="heightClass=regular-widthClass=compact" constant="30"/>
+                </constraint>
+                <constraint firstAttribute="trailing" secondItem="Zr2-pp-WuK" secondAttribute="trailing" constant="40" id="Nh6-N2-axe"/>
+                <constraint firstAttribute="trailing" secondItem="vjQ-fe-12Q" secondAttribute="trailing" constant="34" id="TeN-ZO-sCk"/>
+                <constraint firstAttribute="bottom" secondItem="vjQ-fe-12Q" secondAttribute="bottom" constant="117" id="U7j-O6-oi0"/>
+                <constraint firstAttribute="centerY" secondItem="vjQ-fe-12Q" secondAttribute="centerY" constant="15.5" id="dI2-kK-tjD">
+                    <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
+                </constraint>
+                <constraint firstItem="vjQ-fe-12Q" firstAttribute="top" secondItem="wi7-Zs-rFt" secondAttribute="bottom" constant="39" id="gOe-Ao-7nA"/>
+                <constraint firstItem="riA-gC-Ulj" firstAttribute="top" secondItem="vjQ-fe-12Q" secondAttribute="bottom" constant="24" id="l3p-n9-Zro">
+                    <variation key="heightClass=regular-widthClass=compact" constant="-44"/>
+                </constraint>
+                <constraint firstItem="wi7-Zs-rFt" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="33" id="lZz-0s-rVE"/>
+                <constraint firstItem="Zr2-pp-WuK" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="40" id="qIn-mQ-tEh"/>
+                <constraint firstItem="vjQ-fe-12Q" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="25" id="rPk-mT-gpP"/>
+                <constraint firstAttribute="bottom" secondItem="Zr2-pp-WuK" secondAttribute="bottom" constant="25" id="w8Q-3b-0ia"/>
+            </constraints>
+            <variation key="default">
+                <mask key="subviews">
+                    <exclude reference="wi7-Zs-rFt"/>
+                    <exclude reference="vjQ-fe-12Q"/>
+                    <exclude reference="Zr2-pp-WuK"/>
+                    <exclude reference="riA-gC-Ulj"/>
+                </mask>
+                <mask key="constraints">
+                    <exclude reference="0va-IX-nCW"/>
+                    <exclude reference="lZz-0s-rVE"/>
+                    <exclude reference="Nh6-N2-axe"/>
+                    <exclude reference="qIn-mQ-tEh"/>
+                    <exclude reference="w8Q-3b-0ia"/>
+                    <exclude reference="l3p-n9-Zro"/>
+                    <exclude reference="0Ga-xf-GBL"/>
+                    <exclude reference="TeN-ZO-sCk"/>
+                    <exclude reference="U7j-O6-oi0"/>
+                    <exclude reference="dI2-kK-tjD"/>
+                    <exclude reference="gOe-Ao-7nA"/>
+                    <exclude reference="rPk-mT-gpP"/>
+                </mask>
+            </variation>
+            <variation key="heightClass=regular-widthClass=compact">
+                <mask key="subviews">
+                    <include reference="wi7-Zs-rFt"/>
+                    <include reference="vjQ-fe-12Q"/>
+                    <include reference="Zr2-pp-WuK"/>
+                    <include reference="riA-gC-Ulj"/>
+                </mask>
+                <mask key="constraints">
+                    <include reference="0va-IX-nCW"/>
+                    <include reference="lZz-0s-rVE"/>
+                    <include reference="Nh6-N2-axe"/>
+                    <include reference="qIn-mQ-tEh"/>
+                    <include reference="w8Q-3b-0ia"/>
+                    <include reference="l3p-n9-Zro"/>
+                    <include reference="0Ga-xf-GBL"/>
+                    <include reference="TeN-ZO-sCk"/>
+                    <include reference="U7j-O6-oi0"/>
+                    <include reference="dI2-kK-tjD"/>
+                    <include reference="gOe-Ao-7nA"/>
+                    <include reference="rPk-mT-gpP"/>
+                </mask>
+            </variation>
         </view>
     </objects>
+    <resources>
+        <image name="individual_tip_bg" width="29" height="23"/>
+    </resources>
 </document>

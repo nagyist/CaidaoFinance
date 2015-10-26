@@ -7,16 +7,52 @@
 //
 
 #import "MoneyManagerViewController.h"
+#import "MoneyDetailViewController.h"
+#import "RecharApplyViewController.h"
+#import "GZNetConnectManager.h"
 
 @interface MoneyManagerViewController ()
+{
+    NSDictionary * individualData;
+    NSDictionary * userAccount;
+}
 
 @end
 
 @implementation MoneyManagerViewController
 
+- (id)initWithIndiviData:(NSDictionary *)inData {
+    if (self) {
+        individualData = inData;
+    }
+    return self;
+}
+
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [_scrollView setContentSize:CGSizeMake(0, 500)];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.title = @"资金管理";
+    [self loadData];
     // Do any additional setup after loading the view from its nib.
+}
+
+- (void)loadData {
+    [[GZNetConnectManager sharedInstance] conURL:[NSString stringWithFormat:@"%@%@",TEST_NETADDRESS,TRANSITIONRECORD] connectType:connectType_GET params:nil result:^(BOOL bSuccess, id returnData, NSError *error) {
+        if (bSuccess) {
+            NSDictionary * dic = JSON(returnData);
+            userAccount = [dic objectForKey:@"userAccount"];
+            [self.moneyOne countFrom:0 to:[[userAccount objectForKey:@"allMoney"] floatValue] withDuration:1.5];
+            [self.moneyTwo countFrom:0 to:[[userAccount objectForKey:@"availableMoney"] floatValue] withDuration:1.5];
+            [self.moneyThree countFrom:0 to:[[userAccount objectForKey:@"unavailableMoney"] floatValue] withDuration:1.5];
+            [self.moneyFour countFrom:0 to:[[userAccount objectForKey:@"waitRepossessedCapital"] floatValue] + [[userAccount objectForKey:@"waitRepossessedInterest"] floatValue] withDuration:1.5];
+        }
+    }];
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -34,4 +70,28 @@
 }
 */
 
+- (IBAction)action:(id)sender {
+    switch ([sender tag]) {
+        case 0:
+        {
+            MoneyDetailViewController * view = [[MoneyDetailViewController alloc] init];
+            view.type = MoneyDetailViewTypeMoney;
+            [self.navigationController pushViewController:view animated:YES];
+        }
+            break;
+        case 1:
+            [self.navigationController pushViewController:[[RecharApplyViewController alloc] initWithAccountData:userAccount] animated:YES];
+            break;
+        case 2:
+        {
+            MoneyDetailViewController * view = [[MoneyDetailViewController alloc] init];
+            view.type = MoneyDetailViewTypeRecharge;
+            [self.navigationController pushViewController:view animated:YES];
+        }
+            break;
+            
+        default:
+            break;
+    }
+}
 @end

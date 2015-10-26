@@ -8,6 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
+
+@protocol MZViewContentDelegate <NSObject>
+
+//- (void)didSelectedItem:(NSInteger)index
+
+@end
 typedef NS_ENUM(NSInteger, MZViewContentStyle) {
     MZViewContentStyleEducation = 0,
     MZViewContentStyleJob,

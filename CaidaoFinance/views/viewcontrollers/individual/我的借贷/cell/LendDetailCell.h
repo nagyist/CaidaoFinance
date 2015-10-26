@@ -9,5 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface LendDetailCell : UITableViewCell
+@property (weak, nonatomic) IBOutlet UILabel *name;
+@property (weak, nonatomic) IBOutlet UILabel *text;
 
 @end

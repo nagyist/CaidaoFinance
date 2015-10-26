@@ -61,7 +61,7 @@
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
     InfoCell * cell = (InfoCell*)[collectionView cellForItemAtIndexPath:indexPath];
     [cell select];
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"MZViewControllerSelected" object:nil userInfo:@{@"text":collectionDatas[indexPath.row],@"id":self}];
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"MZViewControllerSelected" object:nil userInfo:@{@"text":collectionDatas[indexPath.row],@"id":self,@"index":[NSString stringWithFormat:@"%ld",indexPath.row]}];
 }
 
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section

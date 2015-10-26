@@ -14,4 +14,6 @@
 
 +(BOOL)checkEmailReg:(NSString*)email;
 
++(BOOL)checkCharacterReg:(NSString*)text;
+
 @end

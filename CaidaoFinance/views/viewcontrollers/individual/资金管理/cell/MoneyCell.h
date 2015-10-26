@@ -7,7 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <UICountingLabel.h>
 
 @interface MoneyCell : UITableViewCell
+@property (weak, nonatomic) IBOutlet UILabel *title;
+@property (weak, nonatomic) IBOutlet UILabel *time;
+@property (weak, nonatomic) IBOutlet UICountingLabel *price;
+@property (weak, nonatomic) IBOutlet UILabel *symbol;
 
 @end

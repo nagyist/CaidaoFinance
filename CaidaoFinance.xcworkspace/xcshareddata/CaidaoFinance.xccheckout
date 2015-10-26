@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>AA1E21A0-E489-4D3C-AB89-DC0A6016C208</string>
+	<key>IDESourceControlProjectName</key>
+	<string>CaidaoFinance</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>EC614CAE057867A34B5C7481F58D30732B46B636</key>
+		<string>https://github.com/fuer4869/CaidaoFinance.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>CaidaoFinance.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>EC614CAE057867A34B5C7481F58D30732B46B636</key>
+		<string>..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/fuer4869/CaidaoFinance.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>EC614CAE057867A34B5C7481F58D30732B46B636</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>EC614CAE057867A34B5C7481F58D30732B46B636</string>
+			<key>IDESourceControlWCCName</key>
+			<string>CaidaoFinance</string>
+		</dict>
+	</array>
+</dict>
+</plist>

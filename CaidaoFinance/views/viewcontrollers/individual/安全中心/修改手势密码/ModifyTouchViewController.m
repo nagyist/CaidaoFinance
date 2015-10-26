@@ -7,8 +7,13 @@
 //
 
 #import "ModifyTouchViewController.h"
+#import "YLSwipeLockView.h"
+#import "LoginViewController.h"
 
-@interface ModifyTouchViewController ()
+@interface ModifyTouchViewController ()<YLSwipeLockViewDelegate>{
+    NSString * passString;
+
+}
 
 @end
 
@@ -16,8 +21,44 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.title = @"修改手势密码";
+    YLSwipeLockView*lockView = [[YLSwipeLockView alloc] initWithFrame:CGRectMake(0, 0, 0, 0)];
+    lockView.delegate = self;
+    _contentView.backgroundColor = [UIColor clearColor];
+    [_contentView addSubview:lockView];
+    [lockView mas_makeConstraints:^(MASConstraintMaker*make)
+     {
+         make.left.equalTo(@0);
+         make.right.equalTo(@0);
+         make.top.equalTo(@0);
+         make.bottom.equalTo(@0);
+     }];
+     
     // Do any additional setup after loading the view from its nib.
 }
+
+-(YLSwipeLockViewState)swipeView:(YLSwipeLockView *)swipeView didEndSwipeWithPassword:(NSString *)password
+{
+    if (!passString) {
+        passString = password;
+        _passTitle.text = @"再次绘制解锁图案";
+        return YLSwipeLockViewStateNormal;
+    }
+    else if ([password isEqualToString:passString])
+    {
+        passString = nil;
+        _passTitle.text = @"设置成功";
+        [USER_DEFAULT setObject:password forKey:TOUCH_PASS];
+        _sureButton.hidden = NO;
+        return YLSwipeLockViewStateSelected;
+    }
+    else
+    {
+        _passTitle.text = @"与上次绘制不一致，请重新绘制";
+        return YLSwipeLockViewStateWarning;
+    }
+}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -34,4 +75,13 @@
 }
 */
 
+- (IBAction)sureAction:(id)sender {
+    [self.navigationController popViewControllerAnimated:YES];
+    
+}
+
+- (IBAction)forgetAction:(id)sender {
+
+    [self.navigationController pushViewController:[LoginViewController new] animated:YES];
+}
 @end

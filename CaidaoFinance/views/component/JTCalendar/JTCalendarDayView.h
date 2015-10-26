@@ -8,6 +8,9 @@
 #import <UIKit/UIKit.h>
 
 #import "JTCalendar.h"
+#import "CalendarDayModel.h"
+
+
 
 @interface JTCalendarDayView : UIView
 
@@ -15,6 +18,8 @@
 
 @property (nonatomic) NSDate *date;
 @property (assign, nonatomic) BOOL isOtherMonth;
+
+@property (nonatomic,strong)CalendarDayModel * model;
 
 - (void)reloadData;
 - (void)reloadAppearance;

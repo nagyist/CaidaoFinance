@@ -10,7 +10,6 @@
 #import <mach/mach.h>
 
 #import "CTCommonUtils.h"
-#import "Reachability.h"
 
 #define  REQUEST_TIMEOUT_INTERVAL 60.0
 
@@ -143,7 +142,7 @@
                                 lineBreakMode:NSLineBreakByTruncatingMiddle];
     label.frame = CGRectMake(label.frame.origin.x, label.frame.origin.y, newSize.width, newSize.height);
     UIView *view = [[UIView alloc]initWithFrame:CGRectMake(0, 0, label.frame.size.width+20, label.frame.size.height+20)];
-    view.backgroundColor = RGBCOLOR(240, 101, 49);
+    view.backgroundColor = [UIColor blackColor];
     view.layer.masksToBounds = YES;
     view.layer.cornerRadius = 5;
     switch (alignment) {
@@ -168,7 +167,7 @@
                          view.alpha = 0.8;
                      }
                      completion:^(BOOL finished){
-                         [UIView animateWithDuration:1.5 animations:^{
+                         [UIView animateWithDuration:2.5 animations:^{
                              view.alpha=0;
                          } completion:^(BOOL finished){
                              [view removeFromSuperview];
@@ -268,14 +267,14 @@
     return taskInfo.resident_size / 1024.0 / 1024.0;
 }
 
-+ (BOOL)currentNetworkStatus {
-    Reachability *r=[Reachability reachabilityForInternetConnection];
-    if ([r currentReachabilityStatus] == NotReachable) {
-        return NO;
-    } else {
-        return YES;
-    }
-}
+//+ (BOOL)currentNetworkStatus {
+//    Reachability *r=[Reachability reachabilityForInternetConnection];
+//    if ([r currentReachabilityStatus] == NotReachable) {
+//        return NO;
+//    } else {
+//        return YES;
+//    }
+//}
 
 + (UITableViewCell *)getLoadMoreCell {
     NSString *CellIdentifier = @"loadmorecell";

@@ -1,0 +1,1 @@
+PODS_MBLOCATIONMANAGER_OTHER_LDFLAGS = -framework "CoreLocation"

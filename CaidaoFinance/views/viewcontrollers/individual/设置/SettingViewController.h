@@ -9,5 +9,9 @@
 #import <UIKit/UIKit.h>
 
 @interface SettingViewController : UIViewController
+- (IBAction)switchAction:(id)sender;
+@property (weak, nonatomic) IBOutlet UIButton *switchButton;
+- (IBAction)cellAction:(id)sender;
+- (IBAction)outAction:(id)sender;
 
 @end

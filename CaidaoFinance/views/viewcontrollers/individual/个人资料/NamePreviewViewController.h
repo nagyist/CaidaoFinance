@@ -10,4 +10,10 @@
 
 @interface NamePreviewViewController : UIViewController
 
+- (id)initWithNameData:(NSDictionary*)nameData;
+
+@property (weak, nonatomic) IBOutlet UILabel *name;
+@property (weak, nonatomic) IBOutlet UILabel *cardNum;
+@property (weak, nonatomic) IBOutlet UILabel *area;
+@property (weak, nonatomic) IBOutlet UILabel *address;
 @end

@@ -9,5 +9,10 @@
 #import <UIKit/UIKit.h>
 
 @interface RecordTableViewCell : UITableViewCell
+@property (weak, nonatomic) IBOutlet UILabel *name;
+@property (weak, nonatomic) IBOutlet UILabel *percent;
+@property (weak, nonatomic) IBOutlet UILabel *price;
+@property (weak, nonatomic) IBOutlet UILabel *date;
+@property (weak, nonatomic) IBOutlet UILabel *tender;
 
 @end

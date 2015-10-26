@@ -8,7 +8,7 @@
 
 #import "GZNetConnectManager.h"
 #import "Reachability.h"
-
+#import "SVProgressHUD.h"
 
 static GZNetConnectManager *_pConnectionMgr_ = nil;
 
@@ -83,61 +83,134 @@ static GZNetConnectManager *_pConnectionMgr_ = nil;
         self.sURL = sl;
         self.cType = ct;
         self.params = pd;
-        
-        if (cType == connectType_GET) {
-            self.httpReq = [ASIHTTPRequest requestWithURL:[NSURL URLWithString:sURL]];
-            [httpReq setRequestMethod:@"GET"];
-        } else if (cType == connectType_POST) {
-            self.httpReq = [ASIFormDataRequest requestWithURL:[NSURL URLWithString:sURL]];
-            [httpReq setRequestMethod:@"POST"];
-            ASIFormDataRequest *form = (ASIFormDataRequest *) httpReq;
-            for (NSString *paramKey in [params allKeys]) {
-                [form addPostValue:[params objectForKey:paramKey] forKey:paramKey];
-            }
+        NSLog(@"%@",sURL);
+        if ([[USER_DEFAULT objectForKey:USER_IS_LOGIN] isEqualToString:USER_IS_LOGIN]) {
+            NSURL*url = [NSURL URLWithString:[NSString stringWithFormat:@"%@%@?userAccount=%@&userpassword=%@",TEST_NETADDRESS,LOGIN,[USER_DEFAULT objectForKey:USER_ACCOUNT],[USER_DEFAULT objectForKey:USER_PASS]]];
+            
+            NSLog(@"LOGIN:%@",url);
+            [USER_DEFAULT setObject:[NSString stringWithFormat:@"%@%@?userAccount=%@&userpassword=%@",TEST_NETADDRESS,LOGIN,[USER_DEFAULT objectForKey:USER_ACCOUNT],[USER_DEFAULT objectForKey:USER_PASS]] forKey:LOGINURL];
+            ASIHTTPRequest*request = [[ASIHTTPRequest alloc] initWithURL:url];
+            [request startAsynchronous];
+            [request setCompletionBlock:^{
+                NSString * str = [request responseString];
+                NSDictionary * logindata = JSON(str);
+//                [USER_DEFAULT setObject:[logindata objectForKey:@"auth"] forKey:USER_AUTH];
+                if (cType == connectType_GET) {
+                    self.httpReq = [ASIHTTPRequest requestWithURL:[NSURL URLWithString:sURL]];
+                    [httpReq setRequestMethod:@"GET"];
+                } else if (cType == connectType_POST) {
+                    self.httpReq = [ASIFormDataRequest requestWithURL:[NSURL URLWithString:sURL]];
+                    [httpReq setRequestMethod:@"POST"];
+                    ASIFormDataRequest *form = (ASIFormDataRequest *) httpReq;
+                    for (NSString *paramKey in [params allKeys]) {
+                        [form addPostValue:[params objectForKey:paramKey] forKey:paramKey];
+                    }
+                }
+                
+                [httpReq setCompletionBlock:^(void){
+                    //如果没有tag和key
+                    if (blockWithOutTagAndKey) {
+                        blockWithOutTagAndKey(YES, httpReq.responseString, nil);
+                    }
+                    //如果没有key
+                    if (blockWithOutKey) {
+                        blockWithOutKey(YES, httpReq.responseString, nil, nTag);
+                    }
+                    
+                    if (block) {
+                        block(YES, httpReq.responseString, nil, self.nTag, self.sKey);
+                    }
+                    
+                    if([[GZNetConnectManager sharedInstance] respondsToSelector:@selector(didFinishedWithItems:error:)]) {
+                        [[GZNetConnectManager sharedInstance] performSelector:@selector(didFinishedWithItems:error:)
+                                                                   withObject:self
+                                                                   withObject:nil];
+                    }
+                }];
+                
+                [httpReq setFailedBlock:^(void) {
+                    if (blockWithOutTagAndKey) {
+                        blockWithOutTagAndKey(NO, httpReq.responseString, httpReq.error);
+                    }
+                    
+                    if (blockWithOutKey) {
+                        blockWithOutKey(NO, httpReq.responseString, httpReq.error, nTag);
+                    }
+                    
+                    if (block) {
+                        block(NO, httpReq.responseString, httpReq.error, self.nTag, self.sKey);
+                    }
+                    if([[GZNetConnectManager sharedInstance] respondsToSelector:@selector(didFinishedWithItems:error:)]) {
+                        [[GZNetConnectManager sharedInstance] performSelector:@selector(didFinishedWithItems:error:)
+                                                                   withObject:self
+                                                                   withObject:httpReq.error];
+                    }
+                }];
+                
+                [httpReq startAsynchronous];
+                
+            }];
         }
         
-        [httpReq setCompletionBlock:^(void){
-            //如果没有tag和key
-            if (blockWithOutTagAndKey) {
-                blockWithOutTagAndKey(YES, httpReq.responseString, nil);
-            }
-            //如果没有key
-            if (blockWithOutKey) {
-                blockWithOutKey(YES, httpReq.responseString, nil, nTag);
+        else {
+            if (cType == connectType_GET) {
+                self.httpReq = [ASIHTTPRequest requestWithURL:[NSURL URLWithString:sURL]];
+                [httpReq setRequestMethod:@"GET"];
+            } else if (cType == connectType_POST) {
+                self.httpReq = [ASIFormDataRequest requestWithURL:[NSURL URLWithString:sURL]];
+                [httpReq setRequestMethod:@"POST"];
+                ASIFormDataRequest *form = (ASIFormDataRequest *) httpReq;
+                for (NSString *paramKey in [params allKeys]) {
+                    [form addPostValue:[params objectForKey:paramKey] forKey:paramKey];
+                }
             }
             
-            if (block) {
-                block(YES, httpReq.responseString, nil, self.nTag, self.sKey);
-            }
+            [httpReq setCompletionBlock:^(void){
+                //如果没有tag和key
+                if (blockWithOutTagAndKey) {
+                    blockWithOutTagAndKey(YES, httpReq.responseString, nil);
+                }
+                //如果没有key
+                if (blockWithOutKey) {
+                    blockWithOutKey(YES, httpReq.responseString, nil, nTag);
+                }
+                
+                if (block) {
+                    block(YES, httpReq.responseString, nil, self.nTag, self.sKey);
+                }
+                
+                if([[GZNetConnectManager sharedInstance] respondsToSelector:@selector(didFinishedWithItems:error:)]) {
+                    [[GZNetConnectManager sharedInstance] performSelector:@selector(didFinishedWithItems:error:)
+                                                               withObject:self
+                                                               withObject:nil];
+                }
+            }];
             
-            if([[GZNetConnectManager sharedInstance] respondsToSelector:@selector(didFinishedWithItems:error:)]) {
-                [[GZNetConnectManager sharedInstance] performSelector:@selector(didFinishedWithItems:error:)
-                                                          withObject:self
-                                                          withObject:nil];
-            }
-        }];
+            [httpReq setFailedBlock:^(void) {
+                if (blockWithOutTagAndKey) {
+                    blockWithOutTagAndKey(NO, httpReq.responseString, httpReq.error);
+                }
+                
+                if (blockWithOutKey) {
+                    blockWithOutKey(NO, httpReq.responseString, httpReq.error, nTag);
+                }
+                
+                if (block) {
+                    block(NO, httpReq.responseString, httpReq.error, self.nTag, self.sKey);
+                }
+                if([[GZNetConnectManager sharedInstance] respondsToSelector:@selector(didFinishedWithItems:error:)]) {
+                    [[GZNetConnectManager sharedInstance] performSelector:@selector(didFinishedWithItems:error:)
+                                                               withObject:self
+                                                               withObject:httpReq.error];
+                }
+            }];
+            
+            [httpReq startAsynchronous];
+
+        }
         
-        [httpReq setFailedBlock:^(void) {
-            if (blockWithOutTagAndKey) {
-                blockWithOutTagAndKey(NO, httpReq.responseString, httpReq.error);
-            }
-            
-            if (blockWithOutKey) {
-                blockWithOutKey(NO, httpReq.responseString, httpReq.error, nTag);
-            }
-            
-            if (block) {
-                block(NO, httpReq.responseString, httpReq.error, self.nTag, self.sKey);
-            }
-            
-            if([[GZNetConnectManager sharedInstance] respondsToSelector:@selector(didFinishedWithItems:error:)]) {
-                [[GZNetConnectManager sharedInstance] performSelector:@selector(didFinishedWithItems:error:)
-                                                          withObject:self
-                                                          withObject:httpReq.error];
-            }
-        }];
         
-        [httpReq startAsynchronous];
+        
     }
     return self;
 }
@@ -341,6 +414,7 @@ static GZNetConnectManager *_pConnectionMgr_ = nil;
           connectType:(connectType) cType
                params:(NSDictionary *) params
                result:(void(^)(BOOL bSuccess,id returnData,NSError *error)) block {
+  
     GZConnItem *item = [[GZConnItem alloc] initWithtype:cType
                                                     url:sURL
                                                  params:params

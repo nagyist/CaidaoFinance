@@ -1,18 +1,108 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8121.17" systemVersion="15A204h" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8101.14"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="Hiragino Sans GB W3.otf">
+            <string>HiraginoSansGB-W3</string>
+            <string>HiraginoSansGB-W3</string>
+            <string>HiraginoSansGB-W3</string>
+            <string>HiraginoSansGB-W3</string>
+        </mutableArray>
+    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="MessageCell">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="91" id="KGk-i7-Jjw" customClass="MessageCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="85"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="84"/>
                 <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2015-04-18  12:05:00 来自&quot;财道金融&quot;" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HVW-05-Efh">
+                        <rect key="frame" x="8" y="5" width="200" height="11"/>
+                        <animations/>
+                        <fontDescription key="fontDescription" name="HiraginoSansGB-W3" family="Hiragino Sans GB" pointSize="11"/>
+                        <color key="textColor" red="0.57647058819999997" green="0.58823529409999997" blue="0.59215686270000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="index_list_bg" translatesAutoresizingMaskIntoConstraints="NO" id="4wk-Sp-MGa">
+                        <rect key="frame" x="8" y="22" width="300" height="54"/>
+                        <animations/>
+                    </imageView>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nh6-Pf-E6l">
+                        <rect key="frame" x="20" y="49" width="288" height="1"/>
+                        <animations/>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="1" id="KI8-ng-0Mg"/>
+                        </constraints>
+                    </view>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="消息标题" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="re9-fB-YDO">
+                        <rect key="frame" x="20" y="30" width="48" height="12"/>
+                        <animations/>
+                        <fontDescription key="fontDescription" name="HiraginoSansGB-W3" family="Hiragino Sans GB" pointSize="12"/>
+                        <color key="textColor" red="0.5450980392" green="0.12549019610000001" blue="0.13725490200000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="New" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dfQ-7O-vew">
+                        <rect key="frame" x="272" y="30" width="26" height="12"/>
+                        <animations/>
+                        <fontDescription key="fontDescription" name="HiraginoSansGB-W3" family="Hiragino Sans GB" pointSize="12"/>
+                        <color key="textColor" red="0.5450980392" green="0.12549019610000001" blue="0.13725490200000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2015-04-18  12:05:00 来自&quot;财道金融&quot;" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M9j-U8-Zdi">
+                        <rect key="frame" x="20" y="58" width="278" height="11"/>
+                        <animations/>
+                        <fontDescription key="fontDescription" name="HiraginoSansGB-W3" family="Hiragino Sans GB" pointSize="11"/>
+                        <color key="textColor" red="0.57647058819999997" green="0.58823529409999997" blue="0.59215686270000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <animations/>
+                <constraints>
+                    <constraint firstAttribute="trailingMargin" secondItem="dfQ-7O-vew" secondAttribute="trailing" constant="14" id="0hN-fK-t0k"/>
+                    <constraint firstItem="HVW-05-Efh" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="0rh-KF-aOP"/>
+                    <constraint firstItem="4wk-Sp-MGa" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="7LK-tC-rcM"/>
+                    <constraint firstItem="re9-fB-YDO" firstAttribute="top" secondItem="HVW-05-Efh" secondAttribute="bottom" constant="14" id="AaM-Nr-yeQ"/>
+                    <constraint firstItem="4wk-Sp-MGa" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="14" id="L6d-73-Cif"/>
+                    <constraint firstAttribute="bottomMargin" relation="greaterThanOrEqual" secondItem="M9j-U8-Zdi" secondAttribute="bottom" constant="7" id="Pim-aC-LWa"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="M9j-U8-Zdi" secondAttribute="trailing" constant="14" id="QqC-Gl-uoc"/>
+                    <constraint firstItem="re9-fB-YDO" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="12" id="Rhj-1l-TsJ"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="4wk-Sp-MGa" secondAttribute="bottom" id="U6q-bz-ckm"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="4wk-Sp-MGa" secondAttribute="trailing" constant="4" id="aaM-Hd-EKk"/>
+                    <constraint firstItem="dfQ-7O-vew" firstAttribute="top" secondItem="HVW-05-Efh" secondAttribute="bottom" constant="14" id="fzg-rV-E1N"/>
+                    <constraint firstItem="nh6-Pf-E6l" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="12" id="iwk-Be-VZO"/>
+                    <constraint firstItem="re9-fB-YDO" firstAttribute="leading" secondItem="nh6-Pf-E6l" secondAttribute="leading" id="n8b-qS-7wg"/>
+                    <constraint firstItem="nh6-Pf-E6l" firstAttribute="top" secondItem="re9-fB-YDO" secondAttribute="bottom" constant="7" id="oPb-iB-VqD"/>
+                    <constraint firstItem="M9j-U8-Zdi" firstAttribute="top" secondItem="re9-fB-YDO" secondAttribute="bottom" constant="16" id="sid-68-1Kv"/>
+                    <constraint firstItem="HVW-05-Efh" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="-3" id="uth-uI-5A0"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="nh6-Pf-E6l" secondAttribute="trailing" constant="4" id="wSv-BY-1Iy"/>
+                    <constraint firstItem="M9j-U8-Zdi" firstAttribute="leading" secondItem="re9-fB-YDO" secondAttribute="leading" id="zWk-yl-f4e"/>
+                </constraints>
+                <variation key="default">
+                    <mask key="constraints">
+                        <exclude reference="n8b-qS-7wg"/>
+                    </mask>
+                </variation>
             </tableViewCellContentView>
+            <animations/>
+            <connections>
+                <outlet property="bgImg" destination="4wk-Sp-MGa" id="Oey-IG-Sbb"/>
+                <outlet property="isnew" destination="dfQ-7O-vew" id="HiB-FZ-je3"/>
+                <outlet property="text" destination="M9j-U8-Zdi" id="vGJ-TE-hNb"/>
+                <outlet property="timeone" destination="HVW-05-Efh" id="aT6-zx-ZyC"/>
+                <outlet property="title" destination="re9-fB-YDO" id="NYc-l5-mqU"/>
+            </connections>
+            <point key="canvasLocation" x="467" y="479.5"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="index_list_bg" width="310" height="107"/>
+    </resources>
 </document>

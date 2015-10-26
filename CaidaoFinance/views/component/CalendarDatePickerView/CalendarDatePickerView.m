@@ -29,12 +29,11 @@
 - (void)drawRect:(CGRect)rect {
     // Drawing code
     [_datePicker setDate:_currnetDate animated:YES];
-    
 }
 
 -(void)initUI
 {
-    self.backgroundColor = RGBCOLOR(58, 58, 78);
+    self.backgroundColor = RGBCOLOR(167, 52, 49);
     [self drawLine];
     _dateLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 10, 200, 20)];
     _dateLabel.textColor = [UIColor whiteColor];
@@ -48,13 +47,14 @@
     [_sureButton setTitle:@"确定" forState:UIControlStateNormal];
     [_sureButton setTitle:@"确定" forState:UIControlStateHighlighted];
     [_sureButton setTitle:@"确定" forState:UIControlStateSelected];
-    [_sureButton setTitleColor:RGBCOLOR(131, 131, 138) forState:UIControlStateNormal];
-    [_sureButton setTitleColor:[UIColor whiteColor] forState:UIControlStateHighlighted];
-    [_sureButton setTitleColor:[UIColor whiteColor] forState:UIControlStateSelected];
+    [_sureButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [_sureButton setTitleColor:[UIColor darkGrayColor] forState:UIControlStateHighlighted];
+    [_sureButton setTitleColor:[UIColor darkGrayColor] forState:UIControlStateSelected];
     [_sureButton addTarget:self action:@selector(sureAction:) forControlEvents:UIControlEventTouchUpInside];
     [self addSubview:_sureButton];
     
     pickerView = [[GZDatePickView alloc] initWithFrame:CGRectMake(0, 40, GZContent_Width, 200)];
+    pickerView.backgroundColor = [UIColor whiteColor];
     pickerView.delegate = self;
     [self addSubview:pickerView];
     

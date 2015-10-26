@@ -7,9 +7,14 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "GZNetConnectManager.h"
+
 #import "AFNetworking.h"
 
+typedef NS_ENUM(NSUInteger, connectType)
+{
+    connectType_GET = 0,
+    connectType_POST
+};
 
 @interface NetManager : NSObject
 

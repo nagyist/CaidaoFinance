@@ -10,4 +10,8 @@
 
 @interface ChooseListView : UIView
 
+@property (weak, nonatomic) IBOutlet UILabel *title;
+
+@property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
+
 @end

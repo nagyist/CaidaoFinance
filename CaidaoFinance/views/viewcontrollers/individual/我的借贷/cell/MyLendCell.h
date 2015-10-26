@@ -7,7 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <UICountingLabel.h>
 
 @interface MyLendCell : UITableViewCell
+@property (weak, nonatomic) IBOutlet UILabel *state;
+@property (weak, nonatomic) IBOutlet UILabel *name;
+@property (weak, nonatomic) IBOutlet UICountingLabel *price;
+@property (weak, nonatomic) IBOutlet UILabel *time;
 
+@property (weak, nonatomic) IBOutlet UIImageView *bgImg;
 @end

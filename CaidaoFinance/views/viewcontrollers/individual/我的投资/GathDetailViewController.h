@@ -9,5 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @interface GathDetailViewController : UIViewController
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
+
+- (id)initWithDetailData:(NSDictionary*)data;
 
 @end

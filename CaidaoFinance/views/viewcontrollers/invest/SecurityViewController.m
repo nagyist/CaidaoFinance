@@ -9,13 +9,30 @@
 #import "SecurityViewController.h"
 
 @interface SecurityViewController ()
+{
+    NSDictionary * detailData;
 
+}
 @end
 
 @implementation SecurityViewController
 
+- (id)initWithDetailData:(NSDictionary *)data
+{
+    if (self) {
+        detailData = data;
+    }
+    return self;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    NSString * htmlString = [[detailData objectForKey:@"borrow"]objectForKey:@"borrowContent"];
+    NSLog(@"保障模式:%@",htmlString);
+    NSAttributedString * attrStr = [[NSAttributedString alloc] initWithData:[htmlString dataUsingEncoding:NSUnicodeStringEncoding] options:@{ NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType } documentAttributes:nil error:nil];
+
+    self.text.attributedText = attrStr;
     // Do any additional setup after loading the view from its nib.
 }
 

@@ -9,5 +9,15 @@
 #import <UIKit/UIKit.h>
 
 @interface InvestDetailViewController : UIViewController
+- (IBAction)buttonAction:(id)sender;
+@property (weak, nonatomic) IBOutlet UIView *scrollbar;
+@property (weak, nonatomic) IBOutlet UIButton *buttonOne;
+@property (weak, nonatomic) IBOutlet UIButton *buttonTwo;
+@property (weak, nonatomic) IBOutlet UIButton *buttonThree;
+@property (weak, nonatomic) IBOutlet UIButton *buttonFour;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *scrollBarCons;
+- (IBAction)closeAction:(id)sender;
+
+- (id)initWithInvestDetailData:(NSDictionary*)data;
 
 @end

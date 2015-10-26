@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="15A178w" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="480" height="480"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="launch_img" translatesAutoresizingMaskIntoConstraints="NO" id="bAN-KE-msv">
+                    <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                    <animations/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="kyV-Eo-XRc">
+                    <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                    <animations/>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="互联网理财" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="btW-Wd-6hy">
+                    <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                    <animations/>
+                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="您身边的金融服务专家" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b2N-w7-ptv">
+                    <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                    <animations/>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <animations/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="kyV-Eo-XRc" firstAttribute="top" secondItem="bAN-KE-msv" secondAttribute="bottom" constant="14" id="7Gh-QI-e4b"/>
+                <constraint firstAttribute="trailing" secondItem="bAN-KE-msv" secondAttribute="trailing" id="A2D-oO-AzS"/>
+                <constraint firstItem="b2N-w7-ptv" firstAttribute="top" secondItem="btW-Wd-6hy" secondAttribute="bottom" constant="-2" id="GTg-ZX-tWI"/>
+                <constraint firstItem="btW-Wd-6hy" firstAttribute="centerX" secondItem="b2N-w7-ptv" secondAttribute="centerX" id="Gsi-wp-BA7"/>
+                <constraint firstItem="bAN-KE-msv" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="TFs-Bb-Kki"/>
+                <constraint firstItem="btW-Wd-6hy" firstAttribute="top" secondItem="kyV-Eo-XRc" secondAttribute="bottom" constant="8" id="fGb-7t-wwQ"/>
+                <constraint firstAttribute="centerX" secondItem="btW-Wd-6hy" secondAttribute="centerX" id="hME-88-3xR"/>
+                <constraint firstAttribute="bottom" secondItem="bAN-KE-msv" secondAttribute="bottom" constant="49" id="pVT-mz-rfu">
+                    <variation key="heightClass=regular-widthClass=compact" constant="150"/>
+                </constraint>
+                <constraint firstAttribute="centerX" secondItem="kyV-Eo-XRc" secondAttribute="centerX" constant="-0.5" id="qtq-Cx-tuF"/>
+                <constraint firstItem="bAN-KE-msv" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="vJA-Jk-40V"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <variation key="default">
+                <mask key="subviews">
+                    <exclude reference="bAN-KE-msv"/>
+                    <exclude reference="kyV-Eo-XRc"/>
+                    <exclude reference="btW-Wd-6hy"/>
+                    <exclude reference="b2N-w7-ptv"/>
+                </mask>
+                <mask key="constraints">
+                    <exclude reference="GTg-ZX-tWI"/>
+                    <exclude reference="Gsi-wp-BA7"/>
+                    <exclude reference="fGb-7t-wwQ"/>
+                    <exclude reference="hME-88-3xR"/>
+                    <exclude reference="A2D-oO-AzS"/>
+                    <exclude reference="TFs-Bb-Kki"/>
+                    <exclude reference="pVT-mz-rfu"/>
+                    <exclude reference="vJA-Jk-40V"/>
+                    <exclude reference="7Gh-QI-e4b"/>
+                    <exclude reference="qtq-Cx-tuF"/>
+                </mask>
+            </variation>
+            <variation key="heightClass=regular-widthClass=compact">
+                <mask key="subviews">
+                    <include reference="bAN-KE-msv"/>
+                    <include reference="kyV-Eo-XRc"/>
+                    <include reference="btW-Wd-6hy"/>
+                    <include reference="b2N-w7-ptv"/>
+                </mask>
+                <mask key="constraints">
+                    <include reference="GTg-ZX-tWI"/>
+                    <include reference="Gsi-wp-BA7"/>
+                    <include reference="fGb-7t-wwQ"/>
+                    <include reference="hME-88-3xR"/>
+                    <include reference="A2D-oO-AzS"/>
+                    <include reference="TFs-Bb-Kki"/>
+                    <include reference="pVT-mz-rfu"/>
+                    <include reference="vJA-Jk-40V"/>
+                    <include reference="7Gh-QI-e4b"/>
+                    <include reference="qtq-Cx-tuF"/>
+                </mask>
+            </variation>
+            <point key="canvasLocation" x="548" y="455"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="launch_img" width="320" height="420"/>
+        <image name="logo" width="113" height="83"/>
+    </resources>
+</document>

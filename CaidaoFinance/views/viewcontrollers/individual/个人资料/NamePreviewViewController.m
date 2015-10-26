@@ -8,14 +8,29 @@
 
 #import "NamePreviewViewController.h"
 
-@interface NamePreviewViewController ()
+@interface NamePreviewViewController () {
+    NSDictionary * realNameData;
+}
 
 @end
 
 @implementation NamePreviewViewController
 
+- (id)initWithNameData:(NSDictionary *)nameData {
+    if (self) {
+        realNameData = nameData;
+    }
+    return self;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.title = @"实名认证";
+    self.name.text = [[realNameData objectForKey:@"user"] objectForKey:@"userRealname"];
+    self.cardNum.text = [[realNameData objectForKey:@"user"] objectForKey:@"cardNumber"];
+    self.area.text = [NSString stringWithFormat:@"%@%@",[[realNameData objectForKey:@"user"] objectForKey:@"userCity"],[[realNameData objectForKey:@"user"] objectForKey:@"userArea"]];
+    self.address.text = [[realNameData objectForKey:@"user"] objectForKey:@"userAddress"];
+
     // Do any additional setup after loading the view from its nib.
 }
 

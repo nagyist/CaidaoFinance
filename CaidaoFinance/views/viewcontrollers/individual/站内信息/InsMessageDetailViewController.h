@@ -9,5 +9,10 @@
 #import <UIKit/UIKit.h>
 
 @interface InsMessageDetailViewController : UIViewController
+@property (weak, nonatomic) IBOutlet UILabel *text;
+@property (weak, nonatomic) IBOutlet UILabel *time;
+@property (weak, nonatomic) IBOutlet UILabel *msgTitle;
+
+- (id)initWithDetailData:(NSDictionary *)data;
 
 @end

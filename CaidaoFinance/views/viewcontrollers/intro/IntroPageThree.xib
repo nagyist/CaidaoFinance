@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="15A178w" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="IntroPageThree">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="introduce_3" translatesAutoresizingMaskIntoConstraints="NO" id="50i-RP-3Xs">
+                    <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                    <animations/>
+                    <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                        <rect key="frame" x="66" y="40" width="268" height="410"/>
+                    </variation>
+                </imageView>
+            </subviews>
+            <animations/>
+            <color key="backgroundColor" red="0.60784313729999995" green="0.1843137255" blue="0.18823529410000001" alpha="1" colorSpace="calibratedRGB"/>
+            <variation key="default">
+                <mask key="subviews">
+                    <exclude reference="50i-RP-3Xs"/>
+                </mask>
+            </variation>
+            <variation key="heightClass=regular-widthClass=compact">
+                <mask key="subviews">
+                    <include reference="50i-RP-3Xs"/>
+                </mask>
+            </variation>
+            <connections>
+                <outlet property="img" destination="50i-RP-3Xs" id="uvP-tt-NJk"/>
+            </connections>
+        </view>
+    </objects>
+    <resources>
+        <image name="introduce_3" width="268" height="410"/>
+    </resources>
+</document>

@@ -9,5 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @interface RecommendCheckinViewController : UIViewController
+@property (weak, nonatomic) IBOutlet UITextField *name;
+@property (weak, nonatomic) IBOutlet UITextField *tel;
+- (IBAction)checkinAction:(id)sender;
 
 @end

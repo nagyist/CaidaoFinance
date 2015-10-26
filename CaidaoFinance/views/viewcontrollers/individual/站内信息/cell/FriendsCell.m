@@ -20,4 +20,9 @@
     // Configure the view for the selected state
 }
 
+- (IBAction)mailAction:(id)sender {
+    if ([_delegate respondsToSelector:@selector(sendMail:)]) {
+        [_delegate sendMail:self.tag];
+    }
+}
 @end

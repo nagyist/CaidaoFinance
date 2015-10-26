@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ChooseBankLocationViewController : UIViewController
+@interface SearchBankViewController : UIViewController
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (weak, nonatomic) IBOutlet UITextField *searchTxt;
 
 @end

@@ -9,5 +9,10 @@
 #import <UIKit/UIKit.h>
 
 @interface RegisterSecondViewController : UIViewController
+- (IBAction)nextAction:(id)sender;
 
+- (id)initWithPostData:(NSMutableDictionary*)data;
+
+@property (weak, nonatomic) IBOutlet UITextField *pswTxtOne;
+@property (weak, nonatomic) IBOutlet UITextField *pswTxtTwo;
 @end

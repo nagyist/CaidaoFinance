@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="15A178w" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HelpDetailViewController">
+            <connections>
+                <outlet property="bgImg" destination="fcM-y3-XR6" id="bP3-4i-Fc7"/>
+                <outlet property="tableView" destination="qD0-db-A6Q" id="hee-77-gre"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="help_content_bg" translatesAutoresizingMaskIntoConstraints="NO" id="fcM-y3-XR6">
+                    <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                    <animations/>
+                </imageView>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="qD0-db-A6Q">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                    <animations/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </tableView>
+            </subviews>
+            <animations/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="fcM-y3-XR6" secondAttribute="bottom" constant="8" id="95V-hK-gag"/>
+                <constraint firstAttribute="trailing" secondItem="qD0-db-A6Q" secondAttribute="trailing" constant="8" id="OAe-f9-mj6"/>
+                <constraint firstAttribute="bottom" secondItem="qD0-db-A6Q" secondAttribute="bottom" constant="8" id="SM0-Tu-TMa"/>
+                <constraint firstItem="qD0-db-A6Q" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="YJh-4B-HSk"/>
+                <constraint firstItem="fcM-y3-XR6" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="eg9-du-Yfx"/>
+                <constraint firstItem="qD0-db-A6Q" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="8" id="kHA-RN-X3c"/>
+                <constraint firstAttribute="trailing" secondItem="fcM-y3-XR6" secondAttribute="trailing" constant="8" id="pF6-4t-YCR"/>
+                <constraint firstItem="fcM-y3-XR6" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="8" id="uwX-40-XLZ"/>
+            </constraints>
+            <variation key="default">
+                <mask key="subviews">
+                    <exclude reference="fcM-y3-XR6"/>
+                    <exclude reference="qD0-db-A6Q"/>
+                </mask>
+                <mask key="constraints">
+                    <exclude reference="95V-hK-gag"/>
+                    <exclude reference="eg9-du-Yfx"/>
+                    <exclude reference="pF6-4t-YCR"/>
+                    <exclude reference="uwX-40-XLZ"/>
+                    <exclude reference="OAe-f9-mj6"/>
+                    <exclude reference="SM0-Tu-TMa"/>
+                    <exclude reference="YJh-4B-HSk"/>
+                    <exclude reference="kHA-RN-X3c"/>
+                </mask>
+            </variation>
+            <variation key="heightClass=regular-widthClass=compact">
+                <mask key="subviews">
+                    <include reference="fcM-y3-XR6"/>
+                    <include reference="qD0-db-A6Q"/>
+                </mask>
+                <mask key="constraints">
+                    <include reference="95V-hK-gag"/>
+                    <include reference="eg9-du-Yfx"/>
+                    <include reference="pF6-4t-YCR"/>
+                    <include reference="uwX-40-XLZ"/>
+                    <include reference="OAe-f9-mj6"/>
+                    <include reference="SM0-Tu-TMa"/>
+                    <include reference="YJh-4B-HSk"/>
+                    <include reference="kHA-RN-X3c"/>
+                </mask>
+            </variation>
+        </view>
+    </objects>
+    <resources>
+        <image name="help_content_bg" width="310" height="50"/>
+    </resources>
+</document>

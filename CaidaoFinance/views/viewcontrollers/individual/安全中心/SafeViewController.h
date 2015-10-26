@@ -9,5 +9,10 @@
 #import <UIKit/UIKit.h>
 
 @interface SafeViewController : UIViewController
+- (IBAction)switchAction:(id)sender;
+@property (weak, nonatomic) IBOutlet UIButton *switchButton;
+@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
+@property (weak, nonatomic) IBOutlet UILabel *tel;
 
+- (IBAction)modifyAction:(id)sender;
 @end

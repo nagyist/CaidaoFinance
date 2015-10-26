@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface MyLendViewController : UIViewController
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @end

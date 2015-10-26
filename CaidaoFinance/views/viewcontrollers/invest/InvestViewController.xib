@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="15A178w" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="InvestViewController">
+            <connections>
+                <outlet property="leftSegment" destination="V8B-WR-Ra6" id="GeH-zQ-8vd"/>
+                <outlet property="rightSegment" destination="yve-1Z-A5t" id="tby-Ni-Xvt"/>
+                <outlet property="tableView" destination="hzj-tD-6OJ" id="Cdv-dU-Xqr"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V8B-WR-Ra6">
+                    <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                    <animations/>
+                    <state key="normal" title="直投" backgroundImage="common_segment_left_button_normal">
+                        <color key="titleColor" red="0.50980392159999999" green="0.50980392159999999" blue="0.50980392159999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <state key="selected" title="直投" backgroundImage="common_segment_left_button_selected">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="segmentAction:" destination="-1" eventType="touchUpInside" id="zUU-Et-N3X"/>
+                    </connections>
+                </button>
+                <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yve-1Z-A5t">
+                    <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                    <animations/>
+                    <state key="normal" title="债权转让" backgroundImage="common_segement_right_button_normal">
+                        <color key="titleColor" red="0.50980392159999999" green="0.50980392159999999" blue="0.50980392159999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <state key="selected" title="债权转让" backgroundImage="common_segment_right_button_selected">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="segmentAction:" destination="-1" eventType="touchUpInside" id="dr1-XY-EZz"/>
+                    </connections>
+                </button>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="hzj-tD-6OJ">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                    <animations/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </tableView>
+            </subviews>
+            <animations/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="yve-1Z-A5t" firstAttribute="leading" secondItem="V8B-WR-Ra6" secondAttribute="trailing" id="5hp-x5-rO5"/>
+                <constraint firstItem="V8B-WR-Ra6" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="18" id="71J-oQ-7UO"/>
+                <constraint firstItem="hzj-tD-6OJ" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="76e-SC-9pV"/>
+                <constraint firstItem="yve-1Z-A5t" firstAttribute="width" secondItem="V8B-WR-Ra6" secondAttribute="width" id="BTh-cQ-qD5"/>
+                <constraint firstItem="hzj-tD-6OJ" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="54" id="MUB-Ce-lVe"/>
+                <constraint firstItem="V8B-WR-Ra6" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="13" id="U0f-DW-JYM"/>
+                <constraint firstAttribute="trailing" secondItem="hzj-tD-6OJ" secondAttribute="trailing" constant="8" id="bZr-Ru-I6u"/>
+                <constraint firstItem="yve-1Z-A5t" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="13" id="hE7-DE-ymp"/>
+                <constraint firstAttribute="trailing" secondItem="yve-1Z-A5t" secondAttribute="trailing" constant="34" id="s4G-pe-cld"/>
+                <constraint firstAttribute="bottom" secondItem="hzj-tD-6OJ" secondAttribute="bottom" id="zIW-kA-jm0"/>
+            </constraints>
+            <variation key="default">
+                <mask key="subviews">
+                    <exclude reference="V8B-WR-Ra6"/>
+                    <exclude reference="yve-1Z-A5t"/>
+                    <exclude reference="hzj-tD-6OJ"/>
+                </mask>
+                <mask key="constraints">
+                    <exclude reference="71J-oQ-7UO"/>
+                    <exclude reference="U0f-DW-JYM"/>
+                    <exclude reference="5hp-x5-rO5"/>
+                    <exclude reference="BTh-cQ-qD5"/>
+                    <exclude reference="hE7-DE-ymp"/>
+                    <exclude reference="s4G-pe-cld"/>
+                    <exclude reference="76e-SC-9pV"/>
+                    <exclude reference="MUB-Ce-lVe"/>
+                    <exclude reference="bZr-Ru-I6u"/>
+                    <exclude reference="zIW-kA-jm0"/>
+                </mask>
+            </variation>
+            <variation key="heightClass=regular-widthClass=compact">
+                <mask key="subviews">
+                    <include reference="V8B-WR-Ra6"/>
+                    <include reference="yve-1Z-A5t"/>
+                    <include reference="hzj-tD-6OJ"/>
+                </mask>
+                <mask key="constraints">
+                    <include reference="71J-oQ-7UO"/>
+                    <include reference="U0f-DW-JYM"/>
+                    <include reference="5hp-x5-rO5"/>
+                    <include reference="BTh-cQ-qD5"/>
+                    <include reference="hE7-DE-ymp"/>
+                    <include reference="s4G-pe-cld"/>
+                    <include reference="76e-SC-9pV"/>
+                    <include reference="MUB-Ce-lVe"/>
+                    <include reference="bZr-Ru-I6u"/>
+                    <include reference="zIW-kA-jm0"/>
+                </mask>
+            </variation>
+            <point key="canvasLocation" x="572" y="411"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="common_segement_right_button_normal" width="144" height="32"/>
+        <image name="common_segment_left_button_normal" width="145" height="32"/>
+        <image name="common_segment_left_button_selected" width="145" height="32"/>
+        <image name="common_segment_right_button_selected" width="145" height="32"/>
+    </resources>
+</document>

@@ -9,5 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @interface ConfirmViewController : UIViewController
+- (IBAction)sureAction:(id)sender;
+@property (weak, nonatomic) IBOutlet UITextField *txt1;
+@property (weak, nonatomic) IBOutlet UITextField *txt2;
 
 @end

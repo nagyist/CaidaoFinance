@@ -9,5 +9,10 @@
 #import <UIKit/UIKit.h>
 
 @interface ModifyTouchViewController : UIViewController
+@property (weak, nonatomic) IBOutlet UIView *contentView;
+@property (weak, nonatomic) IBOutlet UILabel *passTitle;
+@property (weak, nonatomic) IBOutlet UIButton *sureButton;
+- (IBAction)sureAction:(id)sender;
 
+- (IBAction)forgetAction:(id)sender;
 @end

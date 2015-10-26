@@ -9,5 +9,9 @@
 #import <UIKit/UIKit.h>
 
 @interface HelpDetailCell : UITableViewCell
+@property (weak, nonatomic) IBOutlet UILabel *content;
+@property (weak, nonatomic) IBOutlet UILabel *head;
+
+-(CGFloat)calulateHeightWithDesrip:(NSString *)str head:(NSString*)head;
 
 @end

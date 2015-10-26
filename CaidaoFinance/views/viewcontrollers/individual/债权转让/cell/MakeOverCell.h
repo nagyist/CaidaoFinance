@@ -7,7 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <YLProgressBar.h>
+#import <UICountingLabel.h>
 
 @interface MakeOverCell : UITableViewCell
-
+@property (weak, nonatomic) IBOutlet YLProgressBar *progressBar;
+@property (weak, nonatomic) IBOutlet UIImageView *bgImg;
+@property (weak, nonatomic) IBOutlet UILabel *code;
+@property (weak, nonatomic) IBOutlet UILabel *rate;
+@property (weak, nonatomic) IBOutlet UICountingLabel *price;
+@property (weak, nonatomic) IBOutlet UILabel *time;
+@property (weak, nonatomic) IBOutlet UILabel *percent;
+- (void)setProgress:(CGFloat)progress;
 @end

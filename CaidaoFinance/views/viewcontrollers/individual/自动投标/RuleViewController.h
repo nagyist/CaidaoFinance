@@ -9,5 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @interface RuleViewController : UIViewController
+@property (weak, nonatomic) IBOutlet UILabel *ruleLabelOne;
+@property (weak, nonatomic) IBOutlet UILabel *ruleLabelTwo;
 
+@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 @end

@@ -10,4 +10,8 @@
 
 @interface ChartTipsView : UIView
 
+- (id)initWithFrame:(CGRect)frame;
+
+- (void)setText:(NSString*)text;
+
 @end

@@ -25,7 +25,7 @@
 
 #import <UIKit/UIKit.h>
 #import "MZTransition.h"
-#import <MZAppearance/MZAppearance.h>
+#import "MZAppearance.h"
 
 extern CGFloat const MZFormSheetPresentationControllerDefaultAnimationDuration;
 

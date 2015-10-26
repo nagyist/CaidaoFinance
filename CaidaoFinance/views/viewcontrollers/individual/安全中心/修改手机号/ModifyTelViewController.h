@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface ModifyTelViewController : UIViewController
+- (IBAction)nextAction:(id)sender;
 
 @end

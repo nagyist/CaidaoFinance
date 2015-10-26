@@ -1,18 +1,102 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="15A178w" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="Hiragino Sans GB W3.otf">
+            <string>HiraginoSansGB-W3</string>
+            <string>HiraginoSansGB-W3</string>
+            <string>HiraginoSansGB-W3</string>
+            <string>HiraginoSansGB-W3</string>
+        </mutableArray>
+    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="MoneyCell">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+            <rect key="frame" x="0.0" y="0.0" width="300" height="60"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
                 <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                 <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KtL-cW-RjM">
+                        <rect key="frame" x="0.0" y="9" width="300" height="50"/>
+                        <animations/>
+                        <state key="normal" backgroundImage="individual_money_cell_bg">
+                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                        </state>
+                    </button>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="会员充值" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Oc-2j-WmA">
+                        <rect key="frame" x="10" y="13" width="282" height="14"/>
+                        <animations/>
+                        <fontDescription key="fontDescription" name="HiraginoSansGB-W3" family="Hiragino Sans GB" pointSize="14"/>
+                        <color key="textColor" red="0.4431372549" green="0.46666666670000001" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2015-03-30 09:00:00" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tWr-ig-g9M">
+                        <rect key="frame" x="10" y="35" width="151" height="14"/>
+                        <animations/>
+                        <fontDescription key="fontDescription" name="HiraginoSansGB-W3" family="Hiragino Sans GB" pointSize="14"/>
+                        <color key="textColor" red="0.4431372549" green="0.46666666670000001" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="000" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eFh-rV-FnN" customClass="UICountingLabel">
+                        <rect key="frame" x="266" y="28" width="28" height="21"/>
+                        <animations/>
+                        <fontDescription key="fontDescription" name="HiraginoSansGB-W3" family="Hiragino Sans GB" pointSize="14"/>
+                        <color key="textColor" red="0.5450980392" green="0.12549019610000001" blue="0.13725490200000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iiF-Dw-wbY" customClass="UICountingLabel">
+                        <rect key="frame" x="251" y="32" width="10" height="14"/>
+                        <animations/>
+                        <fontDescription key="fontDescription" name="HiraginoSansGB-W3" family="Hiragino Sans GB" pointSize="14"/>
+                        <color key="textColor" red="0.5450980392" green="0.12549019610000001" blue="0.13725490200000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <animations/>
+                <constraints>
+                    <constraint firstAttribute="bottomMargin" secondItem="eFh-rV-FnN" secondAttribute="bottom" constant="2" id="70p-3y-BxL"/>
+                    <constraint firstItem="eFh-rV-FnN" firstAttribute="leading" secondItem="iiF-Dw-wbY" secondAttribute="trailing" constant="5" id="7rt-OL-pvH"/>
+                    <constraint firstItem="2Oc-2j-WmA" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="2" id="9ad-Bi-ZpB"/>
+                    <constraint firstItem="2Oc-2j-WmA" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="2" id="AKI-2q-RZ6"/>
+                    <constraint firstItem="KtL-cW-RjM" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="1" id="JdY-Y9-bI2"/>
+                    <constraint firstItem="2Oc-2j-WmA" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="5" id="LEe-VJ-79z"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="KtL-cW-RjM" secondAttribute="trailing" constant="-8" id="PT0-Zq-hWm"/>
+                    <constraint firstItem="2Oc-2j-WmA" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="2" id="SGg-tg-AIH"/>
+                    <constraint firstItem="eFh-rV-FnN" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="20" id="X09-zh-Zwj"/>
+                    <constraint firstItem="tWr-ig-g9M" firstAttribute="top" secondItem="2Oc-2j-WmA" secondAttribute="bottom" id="a9s-a2-KEj"/>
+                    <constraint firstItem="tWr-ig-g9M" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="2" id="aBH-pY-eI2"/>
+                    <constraint firstItem="2Oc-2j-WmA" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="fmL-jO-mtV"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="eFh-rV-FnN" secondAttribute="trailing" constant="-2" id="j31-an-5qG"/>
+                    <constraint firstItem="KtL-cW-RjM" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="-8" id="p7z-rQ-VNZ"/>
+                    <constraint firstItem="iiF-Dw-wbY" firstAttribute="centerY" secondItem="eFh-rV-FnN" secondAttribute="centerY" id="pwP-Xd-lSa"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="KtL-cW-RjM" secondAttribute="bottom" constant="-8" id="rBQ-yU-jBL"/>
+                    <constraint firstItem="tWr-ig-g9M" firstAttribute="top" secondItem="2Oc-2j-WmA" secondAttribute="bottom" constant="8" id="rnu-Xv-7Gf"/>
+                </constraints>
+                <variation key="default">
+                    <mask key="constraints">
+                        <exclude reference="9ad-Bi-ZpB"/>
+                        <exclude reference="AKI-2q-RZ6"/>
+                        <exclude reference="a9s-a2-KEj"/>
+                    </mask>
+                </variation>
             </tableViewCellContentView>
+            <animations/>
+            <connections>
+                <outlet property="price" destination="eFh-rV-FnN" id="4er-Wb-TZj"/>
+                <outlet property="symbol" destination="iiF-Dw-wbY" id="Nvr-Nv-PDV"/>
+                <outlet property="time" destination="tWr-ig-g9M" id="gHu-8M-Tv3"/>
+                <outlet property="title" destination="2Oc-2j-WmA" id="ZxO-jX-FSv"/>
+            </connections>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="individual_money_cell_bg" width="310" height="53"/>
+    </resources>
 </document>

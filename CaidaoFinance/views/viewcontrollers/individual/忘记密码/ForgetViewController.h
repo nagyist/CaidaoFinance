@@ -9,5 +9,9 @@
 #import <UIKit/UIKit.h>
 
 @interface ForgetViewController : UIViewController
+- (IBAction)nextAction:(id)sender;
+@property (weak, nonatomic) IBOutlet UITextField *telText;
+@property (weak, nonatomic) IBOutlet UITextField *verText;
+- (IBAction)vertyAction:(id)sender;
 
 @end

@@ -16,6 +16,12 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.title = @"提交成功";
+    NSDateFormatter*formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat:@"YYYY.MM.dd hh.mm"];
+    NSString * dateStr = [formatter stringFromDate:[NSDate date]];
+    _time.text = dateStr;
+    
     // Do any additional setup after loading the view from its nib.
 }
 
@@ -34,4 +40,7 @@
 }
 */
 
+- (IBAction)backAction:(id)sender {
+    [self.navigationController popToRootViewControllerAnimated:YES];
+}
 @end

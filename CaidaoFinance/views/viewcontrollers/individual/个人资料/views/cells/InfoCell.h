@@ -9,5 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface InfoCell : UICollectionViewCell
-
+@property (weak, nonatomic) IBOutlet UIButton *button;
+- (IBAction)selectAction:(id)sender;
+- (void)select;
 @end
